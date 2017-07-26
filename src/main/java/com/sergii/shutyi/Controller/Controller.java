@@ -22,10 +22,10 @@ public class Controller {
      * Than prints Note to console.
      */
     public void processUser() {
-        InputUtil inputUtil = new InputUtil();
-        inputUtil.inputAllData(view);
-        model.createNote(inputUtil);
+        InputUtil input = new InputUtil();
+        input.inputAllData(view);
+        model.createNote(input);
 
-        System.out.println(model.getNote().toString());
+        view.printMessage(model.getNote().toString());
     }
 }

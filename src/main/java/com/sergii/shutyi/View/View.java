@@ -28,7 +28,7 @@ public class View {
      * Prints message to commandline
      * @param message message to print
      */
-    private void printMessage(String message){
+    public void printMessage(String message){
         System.out.println(message);
     }
 }
