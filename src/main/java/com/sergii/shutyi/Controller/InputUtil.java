@@ -27,15 +27,18 @@ public class InputUtil {
     private String houseNumber;
     private String apartmentNumber;
 
-
+    /**
+     * Collects data from input.
+     * @param view to print messages
+     */
     public void inputAllData(View view){
         lastName = inputData(view, CheckPatterns.NAME, TextConstants.LAST_NAME).trim();
         firstName = inputData(view, CheckPatterns.NAME, TextConstants.FIRST_NAME).trim();
         middleName = inputData(view, CheckPatterns.NAME, TextConstants.MIDDLE_NAME).trim();
 
         nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME).trim();
-        commentary = inputData(view, CheckPatterns.ANY, TextConstants.COMMENTARY).trim();
-        group = inputData(view, CheckPatterns.ANY, TextConstants.GROUP).trim();
+        commentary = inputLine(view, CheckPatterns.ANY, TextConstants.COMMENTARY).trim();
+        group = inputLine(view, CheckPatterns.ANY, TextConstants.GROUP).trim();
 
         phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME).trim();
         phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE).trim();
@@ -52,6 +55,13 @@ public class InputUtil {
 
     }
 
+    /**
+     * Takes input from console and trims all after space.
+     * @param view to print messages
+     * @param pattern to check input
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted string
+     */
     public String inputData(View view, String pattern, String toInput) {
         view.printInvitation(toInput);
 
@@ -61,6 +71,29 @@ public class InputUtil {
                 sc.next();
             } else {
                 String inputted = sc.next(pattern);
+                sc.nextLine();
+                return inputted;
+            }
+        }
+    }
+
+    /**
+     * Take inputted line from console.
+     * @param view to print messages
+     * @param pattern to check input
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted line
+     */
+    public String inputLine(View view, String pattern, String toInput){
+        view.printInvitation(toInput);
+        String inputted;
+
+        while (true) {
+            if (!sc.hasNext(pattern)) {
+                view.printIncorrectInput(toInput);
+                sc.next();
+            } else {
+                    inputted = sc.nextLine();
                 return inputted;
             }
         }
