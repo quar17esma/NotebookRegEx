@@ -1,10 +1,15 @@
 package com.sergii.shutyi.Controller;
 
+import com.sergii.shutyi.Model.Group;
 import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 import java.util.Scanner;
 
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public class InputUtil {
+
     Scanner sc = new Scanner(System.in);
 
     private String lastName;
@@ -13,7 +18,7 @@ public class InputUtil {
 
     private String nickName;
     private String commentary;
-    private String group;
+    private Group group;
 
     private String phoneNumberHome;
     private String phoneNumberMobile;
@@ -27,31 +32,41 @@ public class InputUtil {
     private String houseNumber;
     private String apartmentNumber;
 
-
+    /**
+     * Collects data from input.
+     * @param view to print messages
+     */
     public void inputAllData(View view){
         lastName = inputData(view, CheckPatterns.NAME, TextConstants.LAST_NAME).trim();
-        firstName = inputData(view, CheckPatterns.NAME, TextConstants.FIRST_NAME);
-        middleName = inputData(view, CheckPatterns.NAME, TextConstants.MIDDLE_NAME);
+        firstName = inputData(view, CheckPatterns.NAME, TextConstants.FIRST_NAME).trim();
+        middleName = inputData(view, CheckPatterns.NAME, TextConstants.MIDDLE_NAME).trim();
 
-        nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME);
-        commentary = inputData(view, CheckPatterns.ANY, TextConstants.COMMENTARY);
-        group = inputData(view, CheckPatterns.ANY, TextConstants.GROUP);
+        nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME).trim();
+        commentary = inputLine(view, CheckPatterns.ANY, TextConstants.COMMENTARY).trim();
+        group = inputGroup(view, TextConstants.GROUP);
 
-        phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME);
-        phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE);
-        phoneNumberMobileAlt = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE_ALT);
+        phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME).trim();
+        phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE).trim();
+        phoneNumberMobileAlt = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE_ALT).trim();
 
-        email = inputData(view, CheckPatterns.EMAIL, TextConstants.EMAIL);
-        skype = inputData(view, CheckPatterns.NICKNAME, TextConstants.SKYPE);
+        email = inputData(view, CheckPatterns.EMAIL, TextConstants.EMAIL).trim();
+        skype = inputData(view, CheckPatterns.NICKNAME, TextConstants.SKYPE).trim();
 
-        postIndex = inputData(view, CheckPatterns.POST_INDEX, TextConstants.INDEX);
-        city = inputData(view, CheckPatterns.NAME, TextConstants.CITY);
-        street = inputData(view, CheckPatterns.NAME, TextConstants.STREET);
-        houseNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.HOUSE);
-        apartmentNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.APARTMENT);
+        postIndex = inputData(view, CheckPatterns.POST_INDEX, TextConstants.INDEX).trim();
+        city = inputData(view, CheckPatterns.NAME, TextConstants.CITY).trim();
+        street = inputData(view, CheckPatterns.NAME, TextConstants.STREET).trim();
+        houseNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.HOUSE).trim();
+        apartmentNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.APARTMENT).trim();
 
     }
 
+    /**
+     * Takes input from console and trims all after space.
+     * @param view to print messages
+     * @param pattern to check input
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted string
+     */
     public String inputData(View view, String pattern, String toInput) {
         view.printInvitation(toInput);
 
@@ -61,7 +76,49 @@ public class InputUtil {
                 sc.next();
             } else {
                 String inputted = sc.next(pattern);
+                sc.nextLine();
                 return inputted;
+            }
+        }
+    }
+
+    /**
+     * Takes inputted line from console.
+     * @param view to print messages
+     * @param pattern to check input
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted line
+     */
+    public String inputLine(View view, String pattern, String toInput){
+        view.printInvitation(toInput);
+
+        while (true) {
+            if (!sc.hasNext(pattern)) {
+                view.printIncorrectInput(toInput);
+                sc.next();
+            } else {
+                return sc.nextLine();
+            }
+        }
+    }
+
+    /**
+     * Takes inputted group from console.
+     * @param view to print messages
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted group
+     */
+    public Group inputGroup(View view, String toInput){
+        view.printInvitation(toInput);
+
+        while (true) {
+            if (!sc.hasNext(Group.FRIENDS.toString())&&
+                    !sc.hasNext(Group.FAMILY.toString())&&
+                    !sc.hasNext(Group.WORK.toString())){
+                view.printIncorrectInput(toInput);
+                sc.next();
+            } else {
+                return Group.valueOf(sc.next().toUpperCase());
             }
         }
     }
@@ -106,11 +163,11 @@ public class InputUtil {
         this.commentary = commentary;
     }
 
-    public String getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 

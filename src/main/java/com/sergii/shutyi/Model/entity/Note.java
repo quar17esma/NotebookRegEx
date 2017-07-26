@@ -1,7 +1,9 @@
 package com.sergii.shutyi.Model.entity;
 
+import com.sergii.shutyi.Model.Group;
+
 /**
- *
+ * Created by S.Shutyi on 26.07.2017.
  */
 public class Note {
 
@@ -11,7 +13,7 @@ public class Note {
     private String lastNameInitials;
     private String nickName;
     private String commentary;
-    private String group;
+    private Group group;
 
     private String phoneNumberHome;
     private String phoneNumberMobile;
@@ -77,11 +79,11 @@ public class Note {
         this.commentary = commentary;
     }
 
-    public String getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 

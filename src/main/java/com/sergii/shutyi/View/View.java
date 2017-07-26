@@ -2,10 +2,14 @@ package com.sergii.shutyi.View;
 
 import static com.sergii.shutyi.View.TextConstants.*;
 
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public class View {
 
     /**
-     * Prints invitation and current range of numbers
+     * Print invitation to input data.
+     * @param toInput indicates what to input
      */
     public void printInvitation(String toInput){
         printMessage(PLEASE_ENTER + toInput);
@@ -13,6 +17,7 @@ public class View {
 
     /**
      * Prints error and new invitation
+     * @param toInput indicates what to input
      */
     public void printIncorrectInput(String toInput){
         printMessage(WRONG_INPUT);
@@ -23,7 +28,7 @@ public class View {
      * Prints message to commandline
      * @param message message to print
      */
-    private void printMessage(String message){
+    public void printMessage(String message){
         System.out.println(message);
     }
 }

@@ -2,12 +2,10 @@ package com.sergii.shutyi;
 
 import com.sergii.shutyi.Controller.Controller;
 import com.sergii.shutyi.Model.Model;
-import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.View.View;
 
 /**
- *
- *
+ * Created by S.Shutyi on 26.07.2017.
  */
 public class Main {
     public static void main(String[] args) {

@@ -1,5 +1,9 @@
 package com.sergii.shutyi.Controller;
 
+
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public interface CheckPatterns {
     String NAME = "[A-Z][a-z]+";
     String EMAIL = "[a-zA-Z1-9\\-\\._]+@[a-z1-9]+(.[a-z1-9]+){1,}";
