@@ -30,25 +30,25 @@ public class InputUtil {
 
     public void inputAllData(View view){
         lastName = inputData(view, CheckPatterns.NAME, TextConstants.LAST_NAME).trim();
-        firstName = inputData(view, CheckPatterns.NAME, TextConstants.FIRST_NAME);
-        middleName = inputData(view, CheckPatterns.NAME, TextConstants.MIDDLE_NAME);
+        firstName = inputData(view, CheckPatterns.NAME, TextConstants.FIRST_NAME).trim();
+        middleName = inputData(view, CheckPatterns.NAME, TextConstants.MIDDLE_NAME).trim();
 
-        nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME);
-        commentary = inputData(view, CheckPatterns.ANY, TextConstants.COMMENTARY);
-        group = inputData(view, CheckPatterns.ANY, TextConstants.GROUP);
+        nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME).trim();
+        commentary = inputData(view, CheckPatterns.ANY, TextConstants.COMMENTARY).trim();
+        group = inputData(view, CheckPatterns.ANY, TextConstants.GROUP).trim();
 
-        phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME);
-        phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE);
-        phoneNumberMobileAlt = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE_ALT);
+        phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME).trim();
+        phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE).trim();
+        phoneNumberMobileAlt = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE_ALT).trim();
 
-        email = inputData(view, CheckPatterns.EMAIL, TextConstants.EMAIL);
-        skype = inputData(view, CheckPatterns.NICKNAME, TextConstants.SKYPE);
+        email = inputData(view, CheckPatterns.EMAIL, TextConstants.EMAIL).trim();
+        skype = inputData(view, CheckPatterns.NICKNAME, TextConstants.SKYPE).trim();
 
-        postIndex = inputData(view, CheckPatterns.POST_INDEX, TextConstants.INDEX);
-        city = inputData(view, CheckPatterns.NAME, TextConstants.CITY);
-        street = inputData(view, CheckPatterns.NAME, TextConstants.STREET);
-        houseNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.HOUSE);
-        apartmentNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.APARTMENT);
+        postIndex = inputData(view, CheckPatterns.POST_INDEX, TextConstants.INDEX).trim();
+        city = inputData(view, CheckPatterns.NAME, TextConstants.CITY).trim();
+        street = inputData(view, CheckPatterns.NAME, TextConstants.STREET).trim();
+        houseNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.HOUSE).trim();
+        apartmentNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.APARTMENT).trim();
 
     }
 
