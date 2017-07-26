@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Controller;
 
+import com.sergii.shutyi.Model.Group;
 import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class InputUtil {
 
     private String nickName;
     private String commentary;
-    private String group;
+    private Group group;
 
     private String phoneNumberHome;
     private String phoneNumberMobile;
@@ -42,7 +43,7 @@ public class InputUtil {
 
         nickName = inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME).trim();
         commentary = inputLine(view, CheckPatterns.ANY, TextConstants.COMMENTARY).trim();
-        group = inputLine(view, CheckPatterns.ANY, TextConstants.GROUP).trim();
+        group = inputGroup(view, TextConstants.GROUP);
 
         phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME).trim();
         phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE).trim();
@@ -82,7 +83,7 @@ public class InputUtil {
     }
 
     /**
-     * Take inputted line from console.
+     * Takes inputted line from console.
      * @param view to print messages
      * @param pattern to check input
      * @param toInput String added to invitation, shows what is currently inputting
@@ -90,15 +91,34 @@ public class InputUtil {
      */
     public String inputLine(View view, String pattern, String toInput){
         view.printInvitation(toInput);
-        String inputted;
 
         while (true) {
             if (!sc.hasNext(pattern)) {
                 view.printIncorrectInput(toInput);
                 sc.next();
             } else {
-                    inputted = sc.nextLine();
-                return inputted;
+                return sc.nextLine();
+            }
+        }
+    }
+
+    /**
+     * Takes inputted group from console.
+     * @param view to print messages
+     * @param toInput String added to invitation, shows what is currently inputting
+     * @return correct inputted group
+     */
+    public Group inputGroup(View view, String toInput){
+        view.printInvitation(toInput);
+
+        while (true) {
+            if (!sc.hasNext(Group.FRIENDS.toString())&&
+                    !sc.hasNext(Group.FAMILY.toString())&&
+                    !sc.hasNext(Group.WORK.toString())){
+                view.printIncorrectInput(toInput);
+                sc.next();
+            } else {
+                return Group.valueOf(sc.next().toUpperCase());
             }
         }
     }
@@ -143,11 +163,11 @@ public class InputUtil {
         this.commentary = commentary;
     }
 
-    public String getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 

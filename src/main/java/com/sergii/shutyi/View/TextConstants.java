@@ -1,5 +1,7 @@
 package com.sergii.shutyi.View;
 
+import com.sergii.shutyi.Model.Group;
+
 /**
  * Created by S.Shutyi on 26.07.2017.
  */
@@ -13,7 +15,8 @@ public interface TextConstants {
     String MIDDLE_NAME = "Middle name";
     String NICK_NAME = "Nick name";
     String COMMENTARY = "Commentary";
-    String GROUP = "Group";
+    String GROUP = "Group. Choose one of options: "
+            + Group.FAMILY + ", " + Group.FRIENDS + ", " + Group.WORK;
     String PHONE_NUMBER_HOME = "home phone number";
     String PHONE_NUMBER_MOBILE = "mobile phone number";
     String PHONE_NUMBER_MOBILE_ALT = "alternative mobile phone number";
