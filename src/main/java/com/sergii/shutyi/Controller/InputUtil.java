@@ -4,7 +4,11 @@ import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 import java.util.Scanner;
 
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public class InputUtil {
+
     Scanner sc = new Scanner(System.in);
 
     private String lastName;

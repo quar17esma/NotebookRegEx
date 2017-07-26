@@ -7,7 +7,7 @@ import java.util.Date;
 
 
 /**
- * 
+ * Created by S.Shutyi on 26.07.2017.
  */
 public class ModelUtil {
 

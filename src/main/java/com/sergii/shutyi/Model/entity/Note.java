@@ -1,7 +1,7 @@
 package com.sergii.shutyi.Model.entity;
 
 /**
- *
+ * Created by S.Shutyi on 26.07.2017.
  */
 public class Note {
 

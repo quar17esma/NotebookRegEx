@@ -1,5 +1,8 @@
 package com.sergii.shutyi.View;
 
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public interface TextConstants {
 
     String PLEASE_ENTER = "Please, enter ";

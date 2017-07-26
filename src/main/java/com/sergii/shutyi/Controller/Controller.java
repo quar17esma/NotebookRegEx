@@ -3,6 +3,9 @@ package com.sergii.shutyi.Controller;
 import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.View.View;
 
+/**
+ * Created by S.Shutyi on 26.07.2017.
+ */
 public class Controller {
 
     Model model;
@@ -15,11 +18,8 @@ public class Controller {
 
     /**
      * Processes user's actions.
-     * Request modelUtil to pick a number to guess.
-     * Checks and processes user's try if input is correct, and ask for another try if not.
-     * Compare user's try with guessing number.
-     * If try is right, request view to show result,
-     * or changes the range and propose another try with showing previous attempts.
+     * Collects user's input, checks it and if correct puts it to entity Note.
+     * Than prints Note to console.
      */
     public void processUser() {
         InputUtil inputUtil = new InputUtil();
