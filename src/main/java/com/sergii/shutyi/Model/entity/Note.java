@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Model.entity;
 
-import com.sergii.shutyi.Model.Group;
+import com.sergii.shutyi.Model.enums.Group;
 
 /**
  * Created by S.Shutyi on 26.07.2017.
@@ -16,7 +16,6 @@ public class Note {
     private Group group;
 
     private Contacts contacts;
-
     private Address address;
 
     private String dateNoteAdded;

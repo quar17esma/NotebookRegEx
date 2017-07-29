@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Controller;
 
-import com.sergii.shutyi.Model.Group;
+import com.sergii.shutyi.Model.enums.Group;
 import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 import java.util.Scanner;
@@ -48,7 +48,6 @@ public class InputUtil {
         phoneNumberHome = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_HOME).trim();
         phoneNumberMobile = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE).trim();
         phoneNumberMobileAlt = inputData(view, CheckPatterns.PHONE_NUMBER, TextConstants.PHONE_NUMBER_MOBILE_ALT).trim();
-
         email = inputData(view, CheckPatterns.EMAIL, TextConstants.EMAIL).trim();
         skype = inputData(view, CheckPatterns.NICKNAME, TextConstants.SKYPE).trim();
 

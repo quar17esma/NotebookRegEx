@@ -4,10 +4,9 @@ import com.sergii.shutyi.Controller.InputUtil;
 import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
+import com.sergii.shutyi.Model.enums.Group;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ModelUtilTest {
     @Test

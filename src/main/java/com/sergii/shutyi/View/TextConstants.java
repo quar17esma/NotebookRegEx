@@ -1,6 +1,6 @@
 package com.sergii.shutyi.View;
 
-import com.sergii.shutyi.Model.Group;
+import com.sergii.shutyi.Model.enums.Group;
 
 /**
  * Created by S.Shutyi on 26.07.2017.
