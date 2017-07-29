@@ -2,6 +2,7 @@ package com.sergii.shutyi.Model;
 
 import com.sergii.shutyi.Controller.InputUtil;
 import com.sergii.shutyi.Model.entity.Address;
+import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.View.TextConstants;
 import java.util.Date;
@@ -29,11 +30,7 @@ public class ModelUtil {
         note.setCommentary(inputData.getCommentary());
         note.setGroup(inputData.getGroup());
 
-        note.setPhoneNumberHome(inputData.getPhoneNumberHome());
-        note.setPhoneNumberMobile(inputData.getPhoneNumberMobile());
-        note.setPhoneNumberMobileAlt(inputData.getPhoneNumberMobileAlt());
-        note.setEmail(inputData.getEmail());
-        note.setSkype(inputData.getSkype());
+        note.setContacts(makeContacts(inputData));
 
         note.setAddress(makeAddress(inputData));
 
@@ -50,6 +47,18 @@ public class ModelUtil {
         String lastNameInitials = note.getLastName() + TextConstants.SPACE
                 + note.getFirstName().substring(0,1) + TextConstants.DOT;
         return lastNameInitials;
+    }
+
+    private Contacts makeContacts(InputUtil inputUtil){
+        Contacts contacts = new Contacts();
+
+        contacts.setPhoneNumberHome(inputUtil.getPhoneNumberHome());
+        contacts.setPhoneNumberMobile(inputUtil.getPhoneNumberMobile());
+        contacts.setPhoneNumberMobileAlt(inputUtil.getPhoneNumberMobileAlt());
+        contacts.setEmail(inputUtil.getEmail());
+        contacts.setSkype(inputUtil.getSkype());
+
+        return contacts;
     }
 
     private Address makeAddress(InputUtil inputUtil){

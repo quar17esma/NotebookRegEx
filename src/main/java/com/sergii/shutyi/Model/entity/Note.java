@@ -15,11 +15,7 @@ public class Note {
     private String commentary;
     private Group group;
 
-    private String phoneNumberHome;
-    private String phoneNumberMobile;
-    private String phoneNumberMobileAlt;
-    private String email;
-    private String skype;
+    private Contacts contacts;
 
     private Address address;
 
@@ -82,44 +78,12 @@ public class Note {
         this.group = group;
     }
 
-    public String getPhoneNumberHome() {
-        return phoneNumberHome;
+    public Contacts getContacts() {
+        return contacts;
     }
 
-    public void setPhoneNumberHome(String phoneNumberHome) {
-        this.phoneNumberHome = phoneNumberHome;
-    }
-
-    public String getPhoneNumberMobile() {
-        return phoneNumberMobile;
-    }
-
-    public void setPhoneNumberMobile(String phoneNumberMobile) {
-        this.phoneNumberMobile = phoneNumberMobile;
-    }
-
-    public String getPhoneNumberMobileAlt() {
-        return phoneNumberMobileAlt;
-    }
-
-    public void setPhoneNumberMobileAlt(String phoneNumberMobileAlt) {
-        this.phoneNumberMobileAlt = phoneNumberMobileAlt;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSkype() {
-        return skype;
-    }
-
-    public void setSkype(String skype) {
-        this.skype = skype;
+    public void setContacts(Contacts contacts) {
+        this.contacts = contacts;
     }
 
     public Address getAddress() {
@@ -156,11 +120,7 @@ public class Note {
                 ", nickName='" + nickName + '\'' +
                 ", commentary='" + commentary + '\'' +
                 ", group=" + group +
-                ", phoneNumberHome='" + phoneNumberHome + '\'' +
-                ", phoneNumberMobile='" + phoneNumberMobile + '\'' +
-                ", phoneNumberMobileAlt='" + phoneNumberMobileAlt + '\'' +
-                ", email='" + email + '\'' +
-                ", skype='" + skype + '\'' +
+                ", contacts=" + contacts +
                 ", address=" + address +
                 ", dateNoteAdded='" + dateNoteAdded + '\'' +
                 ", dateNoteLastModified='" + dateNoteLastModified + '\'' +
@@ -187,15 +147,9 @@ public class Note {
         if (getCommentary() != null ? !getCommentary().equals(note.getCommentary()) : note.getCommentary() != null)
             return false;
         if (getGroup() != note.getGroup()) return false;
-        if (getPhoneNumberHome() != null ? !getPhoneNumberHome().equals(note.getPhoneNumberHome()) : note.getPhoneNumberHome() != null)
+        if (getContacts() != null ? !getContacts().equals(note.getContacts()) : note.getContacts() != null)
             return false;
-        if (getPhoneNumberMobile() != null ? !getPhoneNumberMobile().equals(note.getPhoneNumberMobile()) : note.getPhoneNumberMobile() != null)
-            return false;
-        if (getPhoneNumberMobileAlt() != null ? !getPhoneNumberMobileAlt().equals(note.getPhoneNumberMobileAlt()) : note.getPhoneNumberMobileAlt() != null)
-            return false;
-        if (getEmail() != null ? !getEmail().equals(note.getEmail()) : note.getEmail() != null) return false;
-        if (getSkype() != null ? !getSkype().equals(note.getSkype()) : note.getSkype() != null) return false;
-        return address != null ? address.equals(note.address) : note.address == null;
+        return getAddress() != null ? getAddress().equals(note.getAddress()) : note.getAddress() == null;
     }
 
     @Override
@@ -203,10 +157,7 @@ public class Note {
         int result = getLastName() != null ? getLastName().hashCode() : 0;
         result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
         result = 31 * result + (getMiddleName() != null ? getMiddleName().hashCode() : 0);
-        result = 31 * result + (getLastNameInitials() != null ? getLastNameInitials().hashCode() : 0);
         result = 31 * result + (getNickName() != null ? getNickName().hashCode() : 0);
-        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
-        result = 31 * result + (getSkype() != null ? getSkype().hashCode() : 0);
         return result;
     }
 }
