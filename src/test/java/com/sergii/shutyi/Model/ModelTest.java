@@ -42,7 +42,7 @@ public class ModelTest {
         addressExpectedOne.setFullAddress("02105, Kiev, Tampere, 88, 44");
         noteExpectedOne.setAddress(addressExpectedOne);
 
-        notebookExpected.addNote(noteExpectedOne);
+
 
 
         InputUtil inputUtil = new InputUtil();
@@ -65,6 +65,9 @@ public class ModelTest {
 
         Model model = new Model();
         model.createNote(inputUtil);
+
+        notebookExpected.addNote(noteExpectedOne, inputUtil);
+
         Notebook notebookActual = model.getNotebook();
         Assert.assertEquals(notebookExpected, notebookActual);
     }

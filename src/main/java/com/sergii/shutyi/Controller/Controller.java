@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Controller;
 
+import com.sergii.shutyi.Exceptions.BusyLoginException;
 import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.View.View;
 
@@ -24,7 +25,11 @@ public class Controller {
     public void processUser() {
         InputUtil input = new InputUtil();
         input.inputAllData(view);
-        model.createNote(input);
+        try {
+            model.createNote(input);
+        } catch (BusyLoginException e) {
+            e.printStackTrace();
+        }
 
         view.printNotebook(model);
     }

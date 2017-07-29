@@ -1,13 +1,24 @@
 package com.sergii.shutyi.Model.entity;
 
+import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Exceptions.BusyLoginException;
+
 import java.util.ArrayList;
 
 public class Notebook {
 
     private ArrayList<Note> notesList = new ArrayList<>();
 
-    public void addNote(Note note){
-        notesList.add(note);
+    public void addNote(Note newNote, InputUtil inputUtil) throws BusyLoginException {
+        if (!notesList.isEmpty()) {
+            for (Note note:notesList) {
+                if (note.getNickName().equals(newNote.getNickName())){
+                    throw new BusyLoginException("This login is already busy", inputUtil);
+                }
+            }
+        }
+
+        notesList.add(newNote);
     }
 
     public ArrayList<Note> getNotesList() {
