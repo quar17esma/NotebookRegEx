@@ -34,8 +34,9 @@ public class ModelUtil {
 
         note.setAddress(makeAddress(inputData));
 
-        note.setDateNoteAdded(new Date().toString());
-        note.setDateNoteLastModified(new Date().toString());
+        Date date = new Date();
+        note.setDateNoteAdded(date.toString());
+        note.setDateNoteLastModified(date.toString());
     }
 
     /**
