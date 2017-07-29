@@ -1,6 +1,7 @@
 package com.sergii.shutyi.Model;
 
 import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.View.TextConstants;
 import java.util.Date;
@@ -33,13 +34,8 @@ public class ModelUtil {
         note.setPhoneNumberMobileAlt(inputData.getPhoneNumberMobileAlt());
         note.setEmail(inputData.getEmail());
         note.setSkype(inputData.getSkype());
-        note.setPostIndex(inputData.getPostIndex());
-        note.setCity(inputData.getCity());
-        note.setStreet(inputData.getStreet());
-        note.setHouseNumber(inputData.getHouseNumber());
-        note.setApartmentNumber(inputData.getApartmentNumber());
 
-        note.setFullAddress(makeFullAddress(note));
+        note.setAddress(makeAddress(inputData));
 
         note.setDateNoteAdded(new Date().toString());
         note.setDateNoteLastModified(new Date().toString());
@@ -56,15 +52,28 @@ public class ModelUtil {
         return lastNameInitials;
     }
 
+    private Address makeAddress(InputUtil inputUtil){
+        Address address = new Address();
+
+        address.setPostIndex(inputUtil.getPostIndex());
+        address.setCity(inputUtil.getCity());
+        address.setStreet(inputUtil.getStreet());
+        address.setHouseNumber(inputUtil.getHouseNumber());
+        address.setApartmentNumber(inputUtil.getApartmentNumber());
+        address.setFullAddress(makeFullAddress(address));
+
+        return address;
+    }
+
     /**
      * Makes fullAddress String from parts.
      * @param note note with parts of address
      * @return new String with full address
      */
-    private String makeFullAddress(Note note){
-        String fullAddress = note.getPostIndex() + TextConstants.COMMA
-                + note.getCity() + TextConstants.COMMA + note.getStreet() + TextConstants.COMMA
-                + note.getHouseNumber() + TextConstants.COMMA + note.getApartmentNumber();
+    private String makeFullAddress(Address address){
+        String fullAddress = address.getPostIndex() + TextConstants.COMMA
+                + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
+                + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
         return fullAddress;
     }
 }

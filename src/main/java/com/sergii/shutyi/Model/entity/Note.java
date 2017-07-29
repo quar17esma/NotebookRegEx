@@ -21,12 +21,7 @@ public class Note {
     private String email;
     private String skype;
 
-    private String postIndex;
-    private String city;
-    private String street;
-    private String houseNumber;
-    private String apartmentNumber;
-    private String fullAddress;
+    private Address address;
 
     private String dateNoteAdded;
     private String dateNoteLastModified;
@@ -127,52 +122,12 @@ public class Note {
         this.skype = skype;
     }
 
-    public String getPostIndex() {
-        return postIndex;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setPostIndex(String postIndex) {
-        this.postIndex = postIndex;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
-    }
-
-    public String getApartmentNumber() {
-        return apartmentNumber;
-    }
-
-    public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
-    }
-
-    public String getFullAddress() {
-        return fullAddress;
-    }
-
-    public void setFullAddress(String fullAddress) {
-        this.fullAddress = fullAddress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getDateNoteAdded() {
@@ -200,18 +155,13 @@ public class Note {
                 ", lastNameInitials='" + lastNameInitials + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", commentary='" + commentary + '\'' +
-                ", group='" + group + '\'' +
+                ", group=" + group +
                 ", phoneNumberHome='" + phoneNumberHome + '\'' +
                 ", phoneNumberMobile='" + phoneNumberMobile + '\'' +
                 ", phoneNumberMobileAlt='" + phoneNumberMobileAlt + '\'' +
                 ", email='" + email + '\'' +
                 ", skype='" + skype + '\'' +
-                ", postIndex='" + postIndex + '\'' +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", houseNumber='" + houseNumber + '\'' +
-                ", apartmentNumber='" + apartmentNumber + '\'' +
-                ", fullAddress='" + fullAddress + '\'' +
+                ", address=" + address +
                 ", dateNoteAdded='" + dateNoteAdded + '\'' +
                 ", dateNoteLastModified='" + dateNoteLastModified + '\'' +
                 '}';
@@ -224,33 +174,39 @@ public class Note {
 
         Note note = (Note) o;
 
-        if (!getLastName().equals(note.getLastName())) return false;
-        if (!getFirstName().equals(note.getFirstName())) return false;
-        if (!getMiddleName().equals(note.getMiddleName())) return false;
-        if (!getLastNameInitials().equals(note.getLastNameInitials())) return false;
-        if (!getNickName().equals(note.getNickName())) return false;
-        if (!getCommentary().equals(note.getCommentary())) return false;
+        if (getLastName() != null ? !getLastName().equals(note.getLastName()) : note.getLastName() != null)
+            return false;
+        if (getFirstName() != null ? !getFirstName().equals(note.getFirstName()) : note.getFirstName() != null)
+            return false;
+        if (getMiddleName() != null ? !getMiddleName().equals(note.getMiddleName()) : note.getMiddleName() != null)
+            return false;
+        if (getLastNameInitials() != null ? !getLastNameInitials().equals(note.getLastNameInitials()) : note.getLastNameInitials() != null)
+            return false;
+        if (getNickName() != null ? !getNickName().equals(note.getNickName()) : note.getNickName() != null)
+            return false;
+        if (getCommentary() != null ? !getCommentary().equals(note.getCommentary()) : note.getCommentary() != null)
+            return false;
         if (getGroup() != note.getGroup()) return false;
-        if (!getPhoneNumberHome().equals(note.getPhoneNumberHome())) return false;
-        if (!getPhoneNumberMobile().equals(note.getPhoneNumberMobile())) return false;
-        if (!getPhoneNumberMobileAlt().equals(note.getPhoneNumberMobileAlt())) return false;
-        if (!getEmail().equals(note.getEmail())) return false;
-        if (!getSkype().equals(note.getSkype())) return false;
-        if (!getPostIndex().equals(note.getPostIndex())) return false;
-        if (!getCity().equals(note.getCity())) return false;
-        if (!getStreet().equals(note.getStreet())) return false;
-        if (!getHouseNumber().equals(note.getHouseNumber())) return false;
-        if (!getApartmentNumber().equals(note.getApartmentNumber())) return false;
-        return getFullAddress().equals(note.getFullAddress());
+        if (getPhoneNumberHome() != null ? !getPhoneNumberHome().equals(note.getPhoneNumberHome()) : note.getPhoneNumberHome() != null)
+            return false;
+        if (getPhoneNumberMobile() != null ? !getPhoneNumberMobile().equals(note.getPhoneNumberMobile()) : note.getPhoneNumberMobile() != null)
+            return false;
+        if (getPhoneNumberMobileAlt() != null ? !getPhoneNumberMobileAlt().equals(note.getPhoneNumberMobileAlt()) : note.getPhoneNumberMobileAlt() != null)
+            return false;
+        if (getEmail() != null ? !getEmail().equals(note.getEmail()) : note.getEmail() != null) return false;
+        if (getSkype() != null ? !getSkype().equals(note.getSkype()) : note.getSkype() != null) return false;
+        return address != null ? address.equals(note.address) : note.address == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getLastName().hashCode();
-        result = 31 * result + getFirstName().hashCode();
-        result = 31 * result + getMiddleName().hashCode();
-        result = 31 * result + getNickName().hashCode();
-        result = 31 * result + getEmail().hashCode();
+        int result = getLastName() != null ? getLastName().hashCode() : 0;
+        result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
+        result = 31 * result + (getMiddleName() != null ? getMiddleName().hashCode() : 0);
+        result = 31 * result + (getLastNameInitials() != null ? getLastNameInitials().hashCode() : 0);
+        result = 31 * result + (getNickName() != null ? getNickName().hashCode() : 0);
+        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
+        result = 31 * result + (getSkype() != null ? getSkype().hashCode() : 0);
         return result;
     }
 }

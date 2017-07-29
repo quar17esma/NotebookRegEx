@@ -1,6 +1,7 @@
 package com.sergii.shutyi.Model;
 
 import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Note;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,13 +25,17 @@ public class ModelUtilTest {
         noteExpected.setPhoneNumberMobileAlt("0968887878");
         noteExpected.setEmail("john@gmail.com");
         noteExpected.setSkype("john");
-        noteExpected.setPostIndex("02105");
-        noteExpected.setCity("Kiev");
-        noteExpected.setStreet("Tampere");
-        noteExpected.setHouseNumber("88");
-        noteExpected.setApartmentNumber("44");
-        noteExpected.setFullAddress("02105, Kiev, Tampere, 88, 44");
 
+        Address addressExpected = new Address();
+        addressExpected.setPostIndex("02105");
+        addressExpected.setCity("Kiev");
+        addressExpected.setStreet("Tampere");
+        addressExpected.setHouseNumber("88");
+        addressExpected.setApartmentNumber("44");
+        addressExpected.setFullAddress("02105, Kiev, Tampere, 88, 44");
+        noteExpected.setAddress(addressExpected);
+
+        
         Note noteActual = new Note();
 
         InputUtil inputUtil = new InputUtil();
