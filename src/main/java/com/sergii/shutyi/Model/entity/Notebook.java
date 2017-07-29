@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class Notebook {
 
-    private ArrayList<Note> notesList;
+    private ArrayList<Note> notesList = new ArrayList<>();
+
+    public void addNote(Note note){
+        notesList.add(note);
+    }
 
     public ArrayList<Note> getNotesList() {
         return notesList;

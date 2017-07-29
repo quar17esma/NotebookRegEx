@@ -9,7 +9,7 @@ import com.sergii.shutyi.Model.entity.Notebook;
  */
 public class Model {
 
-    Notebook notebook;
+    Notebook notebook = new Notebook();
 
     /**
      * Creates new Note and fills it with inputted data
@@ -19,7 +19,7 @@ public class Model {
         Note note = new Note();
         ModelUtil modelUtil = new ModelUtil();
         modelUtil.setAllData(note, inputUtil);
-        notebook.getNotesList().add(note);
+        notebook.addNote(note);
     }
 
     public Notebook getNotebook() {
