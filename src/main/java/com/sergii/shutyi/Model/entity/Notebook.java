@@ -13,4 +13,19 @@ public class Notebook {
     public void setNotesList(ArrayList<Note> notesList) {
         this.notesList = notesList;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Notebook notebook = (Notebook) o;
+
+        return getNotesList() != null ? getNotesList().equals(notebook.getNotesList()) : notebook.getNotesList() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getNotesList() != null ? getNotesList().hashCode() : 0;
+    }
 }
