@@ -42,29 +42,29 @@ public class NotebookTest {
         notebook.addNote(note, new InputUtil());
 
         Note newNote = new Note();
-        newNote.setLastName("John");
-        newNote.setFirstName("Smith");
-        newNote.setMiddleName("Arnold");
-        newNote.setLastNameInitials("John S.");
+        newNote.setLastName("Micky");
+        newNote.setFirstName("Mouse");
+        newNote.setMiddleName("Jordan");
+        newNote.setLastNameInitials("Micky M.");
         newNote.setNickName("syllas");
-        newNote.setCommentary("Test Note");
-        newNote.setGroup(Group.FAMILY);
+        newNote.setCommentary("Test Note number 2");
+        newNote.setGroup(Group.FRIENDS);
 
         Contacts newContacts = new Contacts();
-        newContacts.setPhoneNumberHome("0444404545");
-        newContacts.setPhoneNumberMobile("0968887979");
-        newContacts.setPhoneNumberMobileAlt("0968887878");
-        newContacts.setEmail("john@gmail.com");
-        newContacts.setSkype("john");
+        newContacts.setPhoneNumberHome("0444405050");
+        newContacts.setPhoneNumberMobile("0968888080");
+        newContacts.setPhoneNumberMobileAlt("0968888181");
+        newContacts.setEmail("micky@gmail.com");
+        newContacts.setSkype("micky");
         note.setContacts(newContacts);
 
         Address newAddress = new Address();
-        newAddress.setPostIndex("02105");
-        newAddress.setCity("Kiev");
-        newAddress.setStreet("Tampere");
-        newAddress.setHouseNumber("88");
-        newAddress.setApartmentNumber("44");
-        newAddress.setFullAddress("02105, Kiev, Tampere, 88, 44");
+        newAddress.setPostIndex("02103");
+        newAddress.setCity("Lviv");
+        newAddress.setStreet("Teligy");
+        newAddress.setHouseNumber("66");
+        newAddress.setApartmentNumber("33");
+        newAddress.setFullAddress("02103, Lviv, Teligy, 66, 33");
         note.setAddress(newAddress);
 
         notebook.addNote(newNote, new InputUtil());
