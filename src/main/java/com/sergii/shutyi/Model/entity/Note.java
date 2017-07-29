@@ -216,4 +216,50 @@ public class Note {
                 ", dateNoteLastModified='" + dateNoteLastModified + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Note note = (Note) o;
+
+        if (!getLastName().equals(note.getLastName())) return false;
+        if (!getFirstName().equals(note.getFirstName())) return false;
+        if (!getMiddleName().equals(note.getMiddleName())) return false;
+        if (!getLastNameInitials().equals(note.getLastNameInitials())) return false;
+        if (!getNickName().equals(note.getNickName())) return false;
+        if (getCommentary() != null ? !getCommentary().equals(note.getCommentary()) : note.getCommentary() != null)
+            return false;
+        if (getGroup() != note.getGroup()) return false;
+        if (!getPhoneNumberHome().equals(note.getPhoneNumberHome())) return false;
+        if (!getPhoneNumberMobile().equals(note.getPhoneNumberMobile())) return false;
+        if (getPhoneNumberMobileAlt() != null ? !getPhoneNumberMobileAlt().equals(note.getPhoneNumberMobileAlt()) : note.getPhoneNumberMobileAlt() != null)
+            return false;
+        if (!getEmail().equals(note.getEmail())) return false;
+        if (getSkype() != null ? !getSkype().equals(note.getSkype()) : note.getSkype() != null) return false;
+        if (getPostIndex() != null ? !getPostIndex().equals(note.getPostIndex()) : note.getPostIndex() != null)
+            return false;
+        if (getCity() != null ? !getCity().equals(note.getCity()) : note.getCity() != null) return false;
+        if (getStreet() != null ? !getStreet().equals(note.getStreet()) : note.getStreet() != null) return false;
+        if (getHouseNumber() != null ? !getHouseNumber().equals(note.getHouseNumber()) : note.getHouseNumber() != null)
+            return false;
+        if (getApartmentNumber() != null ? !getApartmentNumber().equals(note.getApartmentNumber()) : note.getApartmentNumber() != null)
+            return false;
+        if (getFullAddress() != null ? !getFullAddress().equals(note.getFullAddress()) : note.getFullAddress() != null)
+            return false;
+        if (!getDateNoteAdded().equals(note.getDateNoteAdded())) return false;
+        return getDateNoteLastModified().equals(note.getDateNoteLastModified());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getLastName().hashCode();
+        result = 31 * result + getFirstName().hashCode();
+        result = 31 * result + getMiddleName().hashCode();
+        result = 31 * result + getLastNameInitials().hashCode();
+        result = 31 * result + getNickName().hashCode();
+        result = 31 * result + getDateNoteAdded().hashCode();
+        return result;
+    }
 }
