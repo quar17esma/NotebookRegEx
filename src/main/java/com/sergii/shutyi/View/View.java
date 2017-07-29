@@ -27,6 +27,9 @@ public class View {
         printInvitation(toInput);
     }
 
+    /** Prints Note to console.
+     * @param model to get Note from
+     */
     public void printNote(Model model){
         printMessage(model.getNote().toString());
     }
