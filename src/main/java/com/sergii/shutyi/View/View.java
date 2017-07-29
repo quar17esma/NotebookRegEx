@@ -2,6 +2,9 @@ package com.sergii.shutyi.View;
 
 import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.Model.entity.Note;
+import com.sergii.shutyi.Model.entity.Notebook;
+
+import java.util.ArrayList;
 
 import static com.sergii.shutyi.View.TextConstants.*;
 
@@ -30,8 +33,11 @@ public class View {
     /** Prints Note to console.
      * @param model to get Note from
      */
-    public void printNote(Model model){
-        printMessage(model.getNote().toString());
+    public void printNotebook(Model model){
+        ArrayList<Note> notesList = model.getNotebook().getNotesList();
+        for (Note note:notesList) {
+            printMessage(note.toString());
+        }
     }
 
     /**

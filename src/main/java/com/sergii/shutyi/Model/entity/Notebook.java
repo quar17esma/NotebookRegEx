@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Notebook {
 
-    private ArrayList<Note> notes;
+    private ArrayList<Note> notesList;
 
-    public ArrayList<Note> getNotes() {
-        return notes;
+    public ArrayList<Note> getNotesList() {
+        return notesList;
     }
 
-    public void setNotes(ArrayList<Note> notes) {
-        this.notes = notes;
+    public void setNotesList(ArrayList<Note> notesList) {
+        this.notesList = notesList;
     }
 }
