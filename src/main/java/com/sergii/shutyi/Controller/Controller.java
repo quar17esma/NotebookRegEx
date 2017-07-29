@@ -26,6 +26,6 @@ public class Controller {
         input.inputAllData(view);
         model.createNote(input);
 
-        view.printMessage(model.getNote().toString());
+        view.printNote(model);
     }
 }

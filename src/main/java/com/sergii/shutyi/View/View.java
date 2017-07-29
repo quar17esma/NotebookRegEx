@@ -1,5 +1,8 @@
 package com.sergii.shutyi.View;
 
+import com.sergii.shutyi.Model.Model;
+import com.sergii.shutyi.Model.entity.Note;
+
 import static com.sergii.shutyi.View.TextConstants.*;
 
 /**
@@ -22,6 +25,10 @@ public class View {
     public void printIncorrectInput(String toInput){
         printMessage(WRONG_INPUT);
         printInvitation(toInput);
+    }
+
+    public void printNote(Model model){
+        printMessage(model.getNote().toString());
     }
 
     /**
