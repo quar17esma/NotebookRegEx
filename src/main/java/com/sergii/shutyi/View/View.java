@@ -9,12 +9,15 @@ import java.util.ArrayList;
 import static com.sergii.shutyi.View.TextConstants.*;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code View} class represents the visualization.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class View {
 
     /**
-     * Print invitation to input data.
+     * Prints invitation to input data.
      * @param toInput indicates what to input
      */
     public void printInvitation(String toInput){
@@ -30,8 +33,8 @@ public class View {
         printInvitation(toInput);
     }
 
-    /** Prints Note to console.
-     * @param model to get Note from
+    /** Prints {@code Notebook} to console.
+     * @param model to get {@code Notebook} from
      */
     public void printNotebook(Model model){
         ArrayList<Note> notesList = model.getNotebook().getNotesList();

@@ -3,13 +3,15 @@ package com.sergii.shutyi.View;
 import com.sergii.shutyi.Model.enums.Group;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code TextConstants} interface contains {@code String} constants for visualization by {@code View}.
+ * @see View
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public interface TextConstants {
 
     String PLEASE_ENTER = "Please, enter ";
     String WRONG_INPUT = "Incorrect input! ";
-
     String FIRST_NAME = "First name";
     String LAST_NAME = "Last name";
     String MIDDLE_NAME = "Middle name";
@@ -30,7 +32,6 @@ public interface TextConstants {
     String APARTMENT = "apartment number";
     String DATE_NOTE_ADDED = "Note was added: ";
     String DATE_NOTE_LAST_MODIFIED = "Note was last modified: ";
-
     String LOGIN_BUSY = "another login. The current login you are trying to enter is already busy.";
 
     String HYPHEN = " - ";

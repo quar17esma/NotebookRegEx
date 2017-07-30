@@ -8,7 +8,7 @@ import com.sergii.shutyi.View.View;
 /**
  * The {@code Controller} acts on both model and view.
  * <p>
- * It controls the data flow into model object and updates the view.
+ * It controls the data flow into model object and updates the view whenever data changes.
  * It keeps view and model separate.
  *
  * @author S.Shutyi

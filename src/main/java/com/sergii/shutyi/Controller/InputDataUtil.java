@@ -6,12 +6,19 @@ import com.sergii.shutyi.View.View;
 import java.util.Scanner;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code InputDataUtil} class used for inputting data from console and collecting it.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class InputDataUtil {
 
-    Scanner sc = new Scanner(System.in);
+    /**
+     * {@code Scanner} to input data from console
+     */
+    Scanner scanner = new Scanner(System.in);
 
+    //Fields store inputted data
     private String lastName;
     private String firstName;
     private String middleName;
@@ -34,6 +41,8 @@ public class InputDataUtil {
 
     /**
      * Collects data from input.
+     * <p>
+     * Trims all Strings.
      * @param view to print messages
      */
     public void inputAllData(View view){
@@ -56,7 +65,6 @@ public class InputDataUtil {
         street = inputData(view, CheckPatterns.NAME, TextConstants.STREET).trim();
         houseNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.HOUSE).trim();
         apartmentNumber = inputData(view, CheckPatterns.NUMBER, TextConstants.APARTMENT).trim();
-
     }
 
     /**
@@ -70,12 +78,12 @@ public class InputDataUtil {
         view.printInvitation(toInput);
 
         while (true) {
-            if (!sc.hasNext(pattern)) {
+            if (!scanner.hasNext(pattern)) {
                 view.printIncorrectInput(toInput);
-                sc.next();
+                scanner.next();
             } else {
-                String inputted = sc.next(pattern);
-                sc.nextLine();
+                String inputted = scanner.next(pattern);
+                scanner.nextLine();
                 return inputted;
             }
         }
@@ -85,47 +93,54 @@ public class InputDataUtil {
      * Takes inputted line from console.
      * @param view to print messages
      * @param pattern to check input
-     * @param toInput String added to invitation, shows what is currently inputting
+     * @param toInput {@code String} added to invitation, shows what is currently inputting
      * @return correct inputted line
      */
     public String inputLine(View view, String pattern, String toInput){
         view.printInvitation(toInput);
 
         while (true) {
-            if (!sc.hasNext(pattern)) {
+            if (!scanner.hasNext(pattern)) {
                 view.printIncorrectInput(toInput);
-                sc.next();
+                scanner.next();
             } else {
-                return sc.nextLine();
+                return scanner.nextLine();
             }
         }
     }
 
     /**
-     * Takes inputted group from console.
+     * Takes inputted {@code Group} type from console.
      * @param view to print messages
-     * @param toInput String added to invitation, shows what is currently inputting
-     * @return correct inputted group
+     * @param toInput {@code String} added to invitation, shows what is currently inputting
+     * @return correct inputted {@code Group} type.
      */
     public Group inputGroup(View view, String toInput){
         view.printInvitation(toInput);
 
         while (true) {
-            if (!sc.hasNext(Group.FRIENDS.toString())&&
-                    !sc.hasNext(Group.FAMILY.toString())&&
-                    !sc.hasNext(Group.WORK.toString())){
+            if (!scanner.hasNext(Group.FRIENDS.toString())&&
+                    !scanner.hasNext(Group.FAMILY.toString())&&
+                    !scanner.hasNext(Group.WORK.toString())){
                 view.printIncorrectInput(toInput);
-                sc.next();
+                scanner.next();
             } else {
-                return Group.valueOf(sc.next().toUpperCase());
+                return Group.valueOf(scanner.next().toUpperCase());
             }
         }
     }
 
+    /**
+     * Changes inputted {@code nickName} for another inputted from console.
+     * <p>
+     * Used if {@code Note} with inputted {@code nickName} already exists in {@code Notebook}.
+     * @param view to print messages.
+     */
     public void changeNickName(View view){
         setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.LOGIN_BUSY).trim());
     }
 
+    //getters and setters
     public String getLastName() {
         return lastName;
     }

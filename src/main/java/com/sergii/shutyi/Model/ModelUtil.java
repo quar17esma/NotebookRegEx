@@ -5,26 +5,32 @@ import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.View.TextConstants;
+
 import java.util.Date;
 
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code ModelUtil} class used for filling {@code Note} by data.
+ *
+ * @author S.Shutyi
+ * @see Note
+ * Created on 26.07.2017.
  */
 public class ModelUtil {
 
     /**
-     * Fills all note fields with inputted and created data.
-     * @param note note to fill
-     * @param inputData inputted data
+     * Fills all {@code Note} fields with inputted and created data.
+     *
+     * @param note      note to fill
+     * @param inputData contains inputted data
      */
-    public void setAllData(Note note, InputDataUtil inputData){
+    public void setAllData(Note note, InputDataUtil inputData) {
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
         note.setMiddleName(inputData.getMiddleName());
 
-        note.setLastNameInitials(makeLastnameInitials(note));
+        note.setLastNameInitials(makeLastNameInitials(note));
 
         note.setNickName(inputData.getNickName());
         note.setCommentary(inputData.getCommentary());
@@ -41,49 +47,68 @@ public class ModelUtil {
 
     /**
      * Makes last name String with first name initial
+     *
      * @param note note with last name and first name
-     * @return new String with last name and initial
+     * @return {@code new String} with last name and initial
      */
-    private String makeLastnameInitials(Note note){
+    private String makeLastNameInitials(Note note) {
         String lastNameInitials = note.getLastName() + TextConstants.SPACE
-                + note.getFirstName().substring(0,1) + TextConstants.DOT;
+                + note.getFirstName().substring(0, 1) + TextConstants.DOT;
         return lastNameInitials;
     }
 
-    private Contacts makeContacts(InputDataUtil inputDataUtil){
+    /**
+     * Creates {@code new Contacts} object from inputted data.
+     * @param inputData contains inputted data
+     * @return {@code new Contacts} object
+     */
+    private Contacts makeContacts(InputDataUtil inputData) {
         Contacts contacts = new Contacts();
 
-        contacts.setPhoneNumberHome(inputDataUtil.getPhoneNumberHome());
-        contacts.setPhoneNumberMobile(inputDataUtil.getPhoneNumberMobile());
-        contacts.setPhoneNumberMobileAlt(inputDataUtil.getPhoneNumberMobileAlt());
-        contacts.setEmail(inputDataUtil.getEmail());
-        contacts.setSkype(inputDataUtil.getSkype());
+        contacts.setPhoneNumberHome(inputData.getPhoneNumberHome());
+        contacts.setPhoneNumberMobile(inputData.getPhoneNumberMobile());
+        contacts.setPhoneNumberMobileAlt(inputData.getPhoneNumberMobileAlt());
+        contacts.setEmail(inputData.getEmail());
+        contacts.setSkype(inputData.getSkype());
 
         return contacts;
     }
 
-    private Address makeAddress(InputDataUtil inputDataUtil){
+    /**
+     * Creates {@code new Address} object from inputted data.
+     * @param inputData contains inputted data
+     * @return {@code new Contacts} object
+     */
+    private Address makeAddress(InputDataUtil inputData) {
         Address address = new Address();
 
-        address.setPostIndex(inputDataUtil.getPostIndex());
-        address.setCity(inputDataUtil.getCity());
-        address.setStreet(inputDataUtil.getStreet());
-        address.setHouseNumber(inputDataUtil.getHouseNumber());
-        address.setApartmentNumber(inputDataUtil.getApartmentNumber());
+        address.setPostIndex(inputData.getPostIndex());
+        address.setCity(inputData.getCity());
+        address.setStreet(inputData.getStreet());
+        address.setHouseNumber(inputData.getHouseNumber());
+        address.setApartmentNumber(inputData.getApartmentNumber());
         address.setFullAddress(makeFullAddress(address));
 
         return address;
     }
 
     /**
-     * Makes fullAddress String from parts.
-     * @param note note with parts of address
+     * Makes {@code String fullAddress} from parts.
+     *
+     * @param address object with parts of address.
      * @return new String with full address
      */
-    private String makeFullAddress(Address address){
-        String fullAddress = address.getPostIndex() + TextConstants.COMMA
-                + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
-                + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
-        return fullAddress;
+    private String makeFullAddress(Address address) {
+//        if (address.getPostIndex() != null &&
+//                address.getCity() != null &&
+//                address.getStreet() != null &&
+//                address.getHouseNumber() != null &&
+//                address.getApartmentNumber() != null) {
+            String fullAddress = address.getPostIndex() + TextConstants.COMMA
+                    + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
+                    + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
+            return fullAddress;
+//        }
+
     }
 }
