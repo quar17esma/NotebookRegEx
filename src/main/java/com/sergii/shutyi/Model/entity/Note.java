@@ -3,22 +3,58 @@ package com.sergii.shutyi.Model.entity;
 import com.sergii.shutyi.Model.enums.Group;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * Represents {@code Note} from the {@code Notebook}
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class Note {
 
+    /**
+     * The last name of a person
+     */
     private String lastName;
+    /**
+     * The first name of the person
+     */
     private String firstName;
+    /**
+     * The middle name of the person
+     */
     private String middleName;
+    /**
+     * The last name of the person and first name initial
+     */
     private String lastNameInitials;
+    /**
+     * The nick name of the person
+     */
     private String nickName;
+    /**
+     * The commentary to note
+     */
     private String commentary;
+    /**
+     * The group which this person belong
+     */
     private Group group;
 
+    /**
+     * The contacts of the person
+     */
     private Contacts contacts;
+    /**
+     * Address of the person
+     */
     private Address address;
 
+    /**
+     * The date when note was created
+     */
     private String dateNoteAdded;
+    /**
+     * The data when note was last modified|
+     */
     private String dateNoteLastModified;
 
     public String getLastName() {

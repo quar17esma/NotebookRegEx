@@ -1,12 +1,36 @@
 package com.sergii.shutyi.Model.entity;
 
+/**
+ * Represents address of the person in the note.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017
+ */
 public class Address {
 
+    /**
+     * The value of post index
+     */
     private String postIndex;
+    /**
+     * The name of the city
+     */
     private String city;
+    /**
+     * The name of the street
+     */
     private String street;
+    /**
+     * The number of the house
+     */
     private String houseNumber;
+    /**
+     * The number of the apartment
+     */
     private String apartmentNumber;
+    /**
+     * Contains full address
+     */
     private String fullAddress;
 
     public String getPostIndex() {

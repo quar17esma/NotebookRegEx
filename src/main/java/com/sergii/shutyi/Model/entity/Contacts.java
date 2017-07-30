@@ -1,11 +1,32 @@
 package com.sergii.shutyi.Model.entity;
 
+/**
+ * Represents the contacts of the person in the note
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017
+ */
 public class Contacts {
 
+    /**
+     * Home phone number
+     */
     private String phoneNumberHome;
+    /**
+     * Mobile phone number
+     */
     private String phoneNumberMobile;
+    /**
+     * Alternative mobile phone number
+     */
     private String phoneNumberMobileAlt;
+    /**
+     * E-mail
+     */
     private String email;
+    /**
+     * Skype login
+     */
     private String skype;
 
     public String getPhoneNumberHome() {
