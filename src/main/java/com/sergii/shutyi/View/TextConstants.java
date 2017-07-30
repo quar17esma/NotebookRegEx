@@ -31,6 +31,8 @@ public interface TextConstants {
     String DATE_NOTE_ADDED = "Note was added: ";
     String DATE_NOTE_LAST_MODIFIED = "Note was last modified: ";
 
+    String LOGIN_BUSY = "another login. The current login you are trying to enter is already busy.";
+
     String HYPHEN = " - ";
     String DOT = ".";
     String SPACE = " ";
