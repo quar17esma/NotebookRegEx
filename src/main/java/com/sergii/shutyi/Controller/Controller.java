@@ -6,13 +6,30 @@ import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code Controller} acts on both model and view.
+ * <p>
+ * It controls the data flow into model object and updates the view.
+ * It keeps view and model separate.
+ *
+ * @author S.Shutyi
+ * Created 26.07.2017.
  */
 public class Controller {
 
+    /**
+     * Used for business logic
+     */
     Model model;
+    /**
+     * Used for printing messages on console
+     */
     View view;
 
+    /**
+     * Initializes a newly created {@code Controller}
+     * @param model answering for the business logic
+     * @param view answering for the visualization
+     */
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
@@ -20,19 +37,27 @@ public class Controller {
 
     /**
      * Processes user's actions.
-     * Collects user's input, checks it and if correct puts it to entity Note.
-     * Than prints Note to console.
+     * <p>
+     * Collects user's input, checks it and if correct .
+     * Than prints {@code Notebook} to console.
      */
     public void processUser() {
         InputDataUtil inputData = new InputDataUtil();
         inputData.inputAllData(view);
 
-        createNote(view, inputData);
+        createNote(inputData);
 
         view.printNotebook(model);
     }
 
-    public void createNote(View view, InputDataUtil inputData){
+    /**
+     * Creates {@code Note} and adds it to {@code Notebook}.
+     * <p>
+     * Trying to create {@code Note} from {@code InputDataUtil}.
+     * If all data is correct create {@code new Note}, otherwise ask user to correct data.
+     * @param inputData contains data inputted by user
+     */
+    public void createNote(InputDataUtil inputData){
         boolean isNoteCreated = false;
         while (!isNoteCreated) {
             try {
