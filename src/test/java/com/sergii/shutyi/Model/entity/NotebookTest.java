@@ -1,12 +1,9 @@
 package com.sergii.shutyi.Model.entity;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
 import com.sergii.shutyi.Exceptions.BusyLoginException;
 import com.sergii.shutyi.Model.enums.Group;
-import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class NotebookTest {
     @Test(expected = BusyLoginException.class)
@@ -39,7 +36,7 @@ public class NotebookTest {
         address.setFullAddress("02105, Kiev, Tampere, 88, 44");
         note.setAddress(address);
 
-        notebook.addNote(note, new InputUtil());
+        notebook.addNote(note, new InputDataUtil());
 
         Note newNote = new Note();
         newNote.setLastName("Micky");
@@ -67,7 +64,7 @@ public class NotebookTest {
         newAddress.setFullAddress("02103, Lviv, Teligy, 66, 33");
         note.setAddress(newAddress);
 
-        notebook.addNote(newNote, new InputUtil());
+        notebook.addNote(newNote, new InputDataUtil());
     }
 
 }

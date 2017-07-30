@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Model;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
 import com.sergii.shutyi.Exceptions.BusyLoginException;
 import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.Model.entity.Notebook;
@@ -14,13 +14,14 @@ public class Model {
 
     /**
      * Creates new Note and fills it with inputted data
-     * @param inputUtil consists inputted data
+     * @param inputData consists inputted data
      */
-    public void createNote(InputUtil inputUtil) throws BusyLoginException {
+    public boolean createNote(InputDataUtil inputData) throws BusyLoginException {
         Note note = new Note();
         ModelUtil modelUtil = new ModelUtil();
-        modelUtil.setAllData(note, inputUtil);
-        notebook.addNote(note, inputUtil);
+        modelUtil.setAllData(note, inputData);
+        notebook.addNote(note, inputData);
+        return true;
     }
 
     public Notebook getNotebook() {

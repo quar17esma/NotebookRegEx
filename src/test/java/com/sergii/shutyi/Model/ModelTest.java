@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Model;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
 import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
@@ -8,8 +8,6 @@ import com.sergii.shutyi.Model.entity.Notebook;
 import com.sergii.shutyi.Model.enums.Group;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ModelTest {
     @Test
@@ -45,28 +43,28 @@ public class ModelTest {
 
 
 
-        InputUtil inputUtil = new InputUtil();
-        inputUtil.setLastName("John");
-        inputUtil.setFirstName("Smith");
-        inputUtil.setMiddleName("Arnold");
-        inputUtil.setNickName("syllas");
-        inputUtil.setCommentary("Test Note");
-        inputUtil.setGroup(Group.FAMILY);
-        inputUtil.setPhoneNumberHome("0444404545");
-        inputUtil.setPhoneNumberMobile("0968887979");
-        inputUtil.setPhoneNumberMobileAlt("0968887878");
-        inputUtil.setEmail("john@gmail.com");
-        inputUtil.setSkype("john");
-        inputUtil.setPostIndex("02105");
-        inputUtil.setCity("Kiev");
-        inputUtil.setStreet("Tampere");
-        inputUtil.setHouseNumber("88");
-        inputUtil.setApartmentNumber("44");
+        InputDataUtil inputDataUtil = new InputDataUtil();
+        inputDataUtil.setLastName("John");
+        inputDataUtil.setFirstName("Smith");
+        inputDataUtil.setMiddleName("Arnold");
+        inputDataUtil.setNickName("syllas");
+        inputDataUtil.setCommentary("Test Note");
+        inputDataUtil.setGroup(Group.FAMILY);
+        inputDataUtil.setPhoneNumberHome("0444404545");
+        inputDataUtil.setPhoneNumberMobile("0968887979");
+        inputDataUtil.setPhoneNumberMobileAlt("0968887878");
+        inputDataUtil.setEmail("john@gmail.com");
+        inputDataUtil.setSkype("john");
+        inputDataUtil.setPostIndex("02105");
+        inputDataUtil.setCity("Kiev");
+        inputDataUtil.setStreet("Tampere");
+        inputDataUtil.setHouseNumber("88");
+        inputDataUtil.setApartmentNumber("44");
 
         Model model = new Model();
-        model.createNote(inputUtil);
+        model.createNote(inputDataUtil);
 
-        notebookExpected.addNote(noteExpectedOne, inputUtil);
+        notebookExpected.addNote(noteExpectedOne, inputDataUtil);
 
         Notebook notebookActual = model.getNotebook();
         Assert.assertEquals(notebookExpected, notebookActual);

@@ -2,6 +2,7 @@ package com.sergii.shutyi.Controller;
 
 import com.sergii.shutyi.Exceptions.BusyLoginException;
 import com.sergii.shutyi.Model.Model;
+import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 
 /**
@@ -23,14 +24,22 @@ public class Controller {
      * Than prints Note to console.
      */
     public void processUser() {
-        InputUtil input = new InputUtil();
-        input.inputAllData(view);
-        try {
-            model.createNote(input);
-        } catch (BusyLoginException e) {
-            e.printStackTrace();
-        }
+        InputDataUtil inputData = new InputDataUtil();
+        inputData.inputAllData(view);
+
+        createNote(view, inputData);
 
         view.printNotebook(model);
+    }
+
+    public void createNote(View view, InputDataUtil inputData){
+        boolean isNoteCreated = false;
+        while (!isNoteCreated) {
+            try {
+                isNoteCreated = model.createNote(inputData);
+            } catch (BusyLoginException e) {
+                inputData.changeNickName(view);
+            }
+        }
     }
 }

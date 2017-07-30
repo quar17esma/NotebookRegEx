@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Model;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
 import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
@@ -18,7 +18,7 @@ public class ModelUtil {
      * @param note note to fill
      * @param inputData inputted data
      */
-    public void setAllData(Note note, InputUtil inputData){
+    public void setAllData(Note note, InputDataUtil inputData){
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
@@ -50,26 +50,26 @@ public class ModelUtil {
         return lastNameInitials;
     }
 
-    private Contacts makeContacts(InputUtil inputUtil){
+    private Contacts makeContacts(InputDataUtil inputDataUtil){
         Contacts contacts = new Contacts();
 
-        contacts.setPhoneNumberHome(inputUtil.getPhoneNumberHome());
-        contacts.setPhoneNumberMobile(inputUtil.getPhoneNumberMobile());
-        contacts.setPhoneNumberMobileAlt(inputUtil.getPhoneNumberMobileAlt());
-        contacts.setEmail(inputUtil.getEmail());
-        contacts.setSkype(inputUtil.getSkype());
+        contacts.setPhoneNumberHome(inputDataUtil.getPhoneNumberHome());
+        contacts.setPhoneNumberMobile(inputDataUtil.getPhoneNumberMobile());
+        contacts.setPhoneNumberMobileAlt(inputDataUtil.getPhoneNumberMobileAlt());
+        contacts.setEmail(inputDataUtil.getEmail());
+        contacts.setSkype(inputDataUtil.getSkype());
 
         return contacts;
     }
 
-    private Address makeAddress(InputUtil inputUtil){
+    private Address makeAddress(InputDataUtil inputDataUtil){
         Address address = new Address();
 
-        address.setPostIndex(inputUtil.getPostIndex());
-        address.setCity(inputUtil.getCity());
-        address.setStreet(inputUtil.getStreet());
-        address.setHouseNumber(inputUtil.getHouseNumber());
-        address.setApartmentNumber(inputUtil.getApartmentNumber());
+        address.setPostIndex(inputDataUtil.getPostIndex());
+        address.setCity(inputDataUtil.getCity());
+        address.setStreet(inputDataUtil.getStreet());
+        address.setHouseNumber(inputDataUtil.getHouseNumber());
+        address.setApartmentNumber(inputDataUtil.getApartmentNumber());
         address.setFullAddress(makeFullAddress(address));
 
         return address;

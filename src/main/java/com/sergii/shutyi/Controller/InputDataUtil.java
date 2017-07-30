@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by S.Shutyi on 26.07.2017.
  */
-public class InputUtil {
+public class InputDataUtil {
 
     Scanner sc = new Scanner(System.in);
 
@@ -120,6 +120,10 @@ public class InputUtil {
                 return Group.valueOf(sc.next().toUpperCase());
             }
         }
+    }
+
+    public void changeNickName(View view){
+        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.LOGIN_BUSY).trim());
     }
 
     public String getLastName() {

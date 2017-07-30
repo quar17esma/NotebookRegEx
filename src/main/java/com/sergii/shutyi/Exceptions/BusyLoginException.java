@@ -1,16 +1,16 @@
 package com.sergii.shutyi.Exceptions;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
 
 public class BusyLoginException extends Exception {
-    private InputUtil inputUtil;
+    private InputDataUtil inputDataUtil;
 
-    public BusyLoginException(String message, InputUtil inputUtil) {
+    public BusyLoginException(String message, InputDataUtil inputDataUtil) {
         super(message);
-        this.inputUtil = inputUtil;
+        this.inputDataUtil = inputDataUtil;
     }
 
-    public InputUtil getInputUtil() {
-        return inputUtil;
+    public InputDataUtil getInputDataUtil() {
+        return inputDataUtil;
     }
 }
