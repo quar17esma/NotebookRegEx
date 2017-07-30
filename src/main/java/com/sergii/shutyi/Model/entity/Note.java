@@ -1,34 +1,60 @@
 package com.sergii.shutyi.Model.entity;
 
-import com.sergii.shutyi.Model.Group;
+import com.sergii.shutyi.Model.enums.Group;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * Represents {@code Note} from the {@code Notebook}
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class Note {
 
+    /**
+     * The last name of a person
+     */
     private String lastName;
+    /**
+     * The first name of the person
+     */
     private String firstName;
+    /**
+     * The middle name of the person
+     */
     private String middleName;
+    /**
+     * The last name of the person and first name initial
+     */
     private String lastNameInitials;
+    /**
+     * The nick name of the person
+     */
     private String nickName;
+    /**
+     * The commentary to note
+     */
     private String commentary;
+    /**
+     * The group which this person belong
+     */
     private Group group;
 
-    private String phoneNumberHome;
-    private String phoneNumberMobile;
-    private String phoneNumberMobileAlt;
-    private String email;
-    private String skype;
+    /**
+     * The contacts of the person
+     */
+    private Contacts contacts;
+    /**
+     * Address of the person
+     */
+    private Address address;
 
-    private String postIndex;
-    private String city;
-    private String street;
-    private String houseNumber;
-    private String apartmentNumber;
-    private String fullAddress;
-
+    /**
+     * The date when note was created
+     */
     private String dateNoteAdded;
+    /**
+     * The data when note was last modified|
+     */
     private String dateNoteLastModified;
 
     public String getLastName() {
@@ -87,92 +113,20 @@ public class Note {
         this.group = group;
     }
 
-    public String getPhoneNumberHome() {
-        return phoneNumberHome;
+    public Contacts getContacts() {
+        return contacts;
     }
 
-    public void setPhoneNumberHome(String phoneNumberHome) {
-        this.phoneNumberHome = phoneNumberHome;
+    public void setContacts(Contacts contacts) {
+        this.contacts = contacts;
     }
 
-    public String getPhoneNumberMobile() {
-        return phoneNumberMobile;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setPhoneNumberMobile(String phoneNumberMobile) {
-        this.phoneNumberMobile = phoneNumberMobile;
-    }
-
-    public String getPhoneNumberMobileAlt() {
-        return phoneNumberMobileAlt;
-    }
-
-    public void setPhoneNumberMobileAlt(String phoneNumberMobileAlt) {
-        this.phoneNumberMobileAlt = phoneNumberMobileAlt;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSkype() {
-        return skype;
-    }
-
-    public void setSkype(String skype) {
-        this.skype = skype;
-    }
-
-    public String getPostIndex() {
-        return postIndex;
-    }
-
-    public void setPostIndex(String postIndex) {
-        this.postIndex = postIndex;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
-    }
-
-    public String getApartmentNumber() {
-        return apartmentNumber;
-    }
-
-    public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
-    }
-
-    public String getFullAddress() {
-        return fullAddress;
-    }
-
-    public void setFullAddress(String fullAddress) {
-        this.fullAddress = fullAddress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getDateNoteAdded() {
@@ -200,20 +154,45 @@ public class Note {
                 ", lastNameInitials='" + lastNameInitials + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", commentary='" + commentary + '\'' +
-                ", group='" + group + '\'' +
-                ", phoneNumberHome='" + phoneNumberHome + '\'' +
-                ", phoneNumberMobile='" + phoneNumberMobile + '\'' +
-                ", phoneNumberMobileAlt='" + phoneNumberMobileAlt + '\'' +
-                ", email='" + email + '\'' +
-                ", skype='" + skype + '\'' +
-                ", postIndex='" + postIndex + '\'' +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", houseNumber='" + houseNumber + '\'' +
-                ", apartmentNumber='" + apartmentNumber + '\'' +
-                ", fullAddress='" + fullAddress + '\'' +
+                ", group=" + group +
+                ", contacts=" + contacts +
+                ", address=" + address +
                 ", dateNoteAdded='" + dateNoteAdded + '\'' +
                 ", dateNoteLastModified='" + dateNoteLastModified + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Note note = (Note) o;
+
+        if (getLastName() != null ? !getLastName().equals(note.getLastName()) : note.getLastName() != null)
+            return false;
+        if (getFirstName() != null ? !getFirstName().equals(note.getFirstName()) : note.getFirstName() != null)
+            return false;
+        if (getMiddleName() != null ? !getMiddleName().equals(note.getMiddleName()) : note.getMiddleName() != null)
+            return false;
+        if (getLastNameInitials() != null ? !getLastNameInitials().equals(note.getLastNameInitials()) : note.getLastNameInitials() != null)
+            return false;
+        if (getNickName() != null ? !getNickName().equals(note.getNickName()) : note.getNickName() != null)
+            return false;
+        if (getCommentary() != null ? !getCommentary().equals(note.getCommentary()) : note.getCommentary() != null)
+            return false;
+        if (getGroup() != note.getGroup()) return false;
+        if (getContacts() != null ? !getContacts().equals(note.getContacts()) : note.getContacts() != null)
+            return false;
+        return getAddress() != null ? getAddress().equals(note.getAddress()) : note.getAddress() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getLastName() != null ? getLastName().hashCode() : 0;
+        result = 31 * result + (getFirstName() != null ? getFirstName().hashCode() : 0);
+        result = 31 * result + (getMiddleName() != null ? getMiddleName().hashCode() : 0);
+        result = 31 * result + (getNickName() != null ? getNickName().hashCode() : 0);
+        return result;
     }
 }

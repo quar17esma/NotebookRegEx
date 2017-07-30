@@ -1,14 +1,23 @@
 package com.sergii.shutyi.View;
 
+import com.sergii.shutyi.Model.Model;
+import com.sergii.shutyi.Model.entity.Note;
+import com.sergii.shutyi.Model.entity.Notebook;
+
+import java.util.ArrayList;
+
 import static com.sergii.shutyi.View.TextConstants.*;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code View} class represents the visualization.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class View {
 
     /**
-     * Print invitation to input data.
+     * Prints invitation to input data.
      * @param toInput indicates what to input
      */
     public void printInvitation(String toInput){
@@ -22,6 +31,16 @@ public class View {
     public void printIncorrectInput(String toInput){
         printMessage(WRONG_INPUT);
         printInvitation(toInput);
+    }
+
+    /** Prints {@code Notebook} to console.
+     * @param model to get {@code Notebook} from
+     */
+    public void printNotebook(Model model){
+        ArrayList<Note> notesList = model.getNotebook().getNotesList();
+        for (Note note:notesList) {
+            printMessage(note.toString());
+        }
     }
 
     /**

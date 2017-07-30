@@ -1,30 +1,46 @@
 package com.sergii.shutyi.Model;
 
-import com.sergii.shutyi.Controller.InputUtil;
+import com.sergii.shutyi.Controller.InputDataUtil;
+import com.sergii.shutyi.Exceptions.BusyLoginException;
 import com.sergii.shutyi.Model.entity.Note;
+import com.sergii.shutyi.Model.entity.Notebook;
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code Model} class represents entities to store data and business logic.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public class Model {
 
-    Note note;
+    /**
+     * Entity for storing all {@code Note} objects.
+     */
+    Notebook notebook = new Notebook();
 
     /**
-     * Creates new Note and fills it with inputted data
-     * @param inputUtil consists inputted data
+     * Creates {@code new Note} and adds it to {@code Notebook}.
+     * <p>
+     * Creates {@code new Note} and fills it with inputted data.
+     * If data is incorrect than asks for entering correct data and tries again.
+     * @param inputData consists inputted data.
+     * @return {@code true} if {@code Note} is successfully created and added to {@code Notebook}.
+     * @throws BusyLoginException if {@code Note} with inputted login is already stored in {@code Notebook}.
      */
-    public void createNote(InputUtil inputUtil){
-        note = new Note();
+    public boolean createNote(InputDataUtil inputData) throws BusyLoginException {
+        Note note = new Note();
         ModelUtil modelUtil = new ModelUtil();
-        modelUtil.setAllData(note, inputUtil);
+        modelUtil.setAllData(note, inputData);
+        notebook.addNote(note, inputData);
+        return true;
     }
 
-    public Note getNote() {
-        return note;
+    //getters and setters
+    public Notebook getNotebook() {
+        return notebook;
     }
 
-    public void setNote(Note note) {
-        this.note = note;
+    public void setNotebook(Notebook notebook) {
+        this.notebook = notebook;
     }
 }

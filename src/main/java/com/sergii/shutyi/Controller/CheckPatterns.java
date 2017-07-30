@@ -2,7 +2,10 @@ package com.sergii.shutyi.Controller;
 
 
 /**
- * Created by S.Shutyi on 26.07.2017.
+ * The {@code CheckPatterns} interface contains {@code String} patterns to check user's input.
+ *
+ * @author S.Shutyi
+ * Created on 26.07.2017.
  */
 public interface CheckPatterns {
     String NAME = "[A-Z][a-z]+";
