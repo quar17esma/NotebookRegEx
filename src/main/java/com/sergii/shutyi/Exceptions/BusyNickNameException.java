@@ -8,19 +8,19 @@ import com.sergii.shutyi.Controller.InputDataUtil;
  * @author S.Shutyi
  * Created on 29.07.2017
  */
-public class BusyLoginException extends Exception {
+public class BusyNickNameException extends Exception {
     /**
      * Contains inputted data
      */
     private InputDataUtil inputData;
 
     /**
-     * Constructs an {@code BusyLoginException} with the specified
+     * Constructs an {@code BusyNickNameException} with the specified
      * detail message and inputted data.
      * @param message
      * @param inputData
      */
-    public BusyLoginException(String message, InputDataUtil inputData) {
+    public BusyNickNameException(String message, InputDataUtil inputData) {
         super(message);
         this.inputData = inputData;
     }

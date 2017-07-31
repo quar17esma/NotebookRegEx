@@ -1,12 +1,12 @@
 package com.sergii.shutyi.Model.entity;
 
 import com.sergii.shutyi.Controller.InputDataUtil;
-import com.sergii.shutyi.Exceptions.BusyLoginException;
+import com.sergii.shutyi.Exceptions.BusyNickNameException;
 import com.sergii.shutyi.Model.enums.Group;
 import org.junit.Test;
 
 public class NotebookTest {
-    @Test(expected = BusyLoginException.class)
+    @Test(expected = BusyNickNameException.class)
     public void addNote() throws Exception {
         Notebook notebook = new Notebook();
 

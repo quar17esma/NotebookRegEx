@@ -1,7 +1,7 @@
 package com.sergii.shutyi.Model;
 
 import com.sergii.shutyi.Controller.InputDataUtil;
-import com.sergii.shutyi.Exceptions.BusyLoginException;
+import com.sergii.shutyi.Exceptions.BusyNickNameException;
 import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.Model.entity.Notebook;
 
@@ -25,9 +25,9 @@ public class Model {
      * If data is incorrect than asks for entering correct data and tries again.
      * @param inputData consists inputted data.
      * @return {@code true} if {@code Note} is successfully created and added to {@code Notebook}.
-     * @throws BusyLoginException if {@code Note} with inputted login is already stored in {@code Notebook}.
+     * @throws BusyNickNameException if {@code Note} with inputted login is already stored in {@code Notebook}.
      */
-    public boolean createNote(InputDataUtil inputData) throws BusyLoginException {
+    public boolean createNote(InputDataUtil inputData) throws BusyNickNameException {
         Note note = new Note();
         ModelUtil modelUtil = new ModelUtil();
         modelUtil.setAllData(note, inputData);

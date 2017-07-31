@@ -1,7 +1,7 @@
 package com.sergii.shutyi.Model.entity;
 
 import com.sergii.shutyi.Controller.InputDataUtil;
-import com.sergii.shutyi.Exceptions.BusyLoginException;
+import com.sergii.shutyi.Exceptions.BusyNickNameException;
 
 import java.util.ArrayList;
 
@@ -22,14 +22,14 @@ public class Notebook {
      * Adds {@code Note} to the {@code Notebook}.
      * @param newNote {@code Note} to add
      * @param inputData contains inputted data, needed if exception occurs
-     * @throws BusyLoginException if nick name from {@code Note} to add is already busy
+     * @throws BusyNickNameException if nick name from {@code Note} to add is already busy
      * by another {@code Note} in the {@code Notebook}
      */
-    public void addNote(Note newNote, InputDataUtil inputData) throws BusyLoginException {
+    public void addNote(Note newNote, InputDataUtil inputData) throws BusyNickNameException {
         if (!notesList.isEmpty()) {
             for (Note note:notesList) {
                 if (note.getNickName().equals(newNote.getNickName())){
-                    throw new BusyLoginException("This login is already busy", inputData);
+                    throw new BusyNickNameException("This nick name is already busy", inputData);
                 }
             }
         }
