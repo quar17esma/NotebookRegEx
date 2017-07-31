@@ -2,6 +2,9 @@ package com.sergii.shutyi.View;
 
 import com.sergii.shutyi.Model.enums.Group;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  * The {@code TextConstants} interface contains {@code String} constants for visualization by {@code View}.
  * @see View
@@ -10,29 +13,34 @@ import com.sergii.shutyi.Model.enums.Group;
  */
 public interface TextConstants {
 
-    String PLEASE_ENTER = "Please, enter ";
-    String WRONG_INPUT = "Incorrect input! ";
-    String FIRST_NAME = "First name";
-    String LAST_NAME = "Last name";
-    String MIDDLE_NAME = "Middle name";
-    String NICK_NAME = "Nick name";
-    String COMMENTARY = "Commentary";
-    String GROUP = "Group. Choose one of options: "
+    Locale englishLocale = new Locale("en", "US");
+    Locale russianLocale = new Locale("ru", "RU");
+
+    ResourceBundle bundle = ResourceBundle.getBundle("Labels", englishLocale);
+
+    String PLEASE_ENTER = bundle.getString("please.enter");
+    String WRONG_INPUT = bundle.getString("wrong.input");
+    String FIRST_NAME = bundle.getString("first.name");
+    String LAST_NAME = bundle.getString("last.name");
+    String MIDDLE_NAME = bundle.getString("middle.name");
+    String NICK_NAME = bundle.getString("nick.name");
+    String COMMENTARY = bundle.getString("commentary");
+    String GROUP = bundle.getString("group")
             + Group.FAMILY + ", " + Group.FRIENDS + ", " + Group.WORK;
-    String PHONE_NUMBER_HOME = "home phone number";
-    String PHONE_NUMBER_MOBILE = "mobile phone number";
-    String PHONE_NUMBER_MOBILE_ALT = "alternative mobile phone number";
-    String EMAIL = "email";
-    String SKYPE = "skype";
-    String ADDRESS = "address";
-    String INDEX = "post index";
-    String CITY = "city";
-    String STREET = "street";
-    String HOUSE = "house number";
-    String APARTMENT = "apartment number";
-    String DATE_NOTE_ADDED = "Note was added: ";
-    String DATE_NOTE_LAST_MODIFIED = "Note was last modified: ";
-    String LOGIN_BUSY = "another login. The current login you are trying to enter is already busy.";
+    String PHONE_NUMBER_HOME = bundle.getString("phone.number.home");
+    String PHONE_NUMBER_MOBILE = bundle.getString("phone.number.mobile");
+    String PHONE_NUMBER_MOBILE_ALT = bundle.getString("phone.number.mobile.alt");
+    String EMAIL = bundle.getString("email");
+    String SKYPE = bundle.getString("skype");
+    String ADDRESS = bundle.getString("address");
+    String INDEX = bundle.getString("post.index");
+    String CITY = bundle.getString("city");
+    String STREET = bundle.getString("street");
+    String HOUSE = bundle.getString("house");
+    String APARTMENT = bundle.getString("apartment");
+    String DATE_NOTE_ADDED = bundle.getString("date.note.added");
+    String DATE_NOTE_LAST_MODIFIED = bundle.getString("date.note.last.modified");
+    String NICK_NAME_BUSY = bundle.getString("nick.name.busy");
 
     String HYPHEN = " - ";
     String DOT = ".";
