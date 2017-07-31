@@ -2,8 +2,6 @@ package com.sergii.shutyi.View;
 
 import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.Model.entity.Note;
-import com.sergii.shutyi.Model.entity.Notebook;
-
 import java.util.ArrayList;
 
 import static com.sergii.shutyi.View.TextConstants.*;
