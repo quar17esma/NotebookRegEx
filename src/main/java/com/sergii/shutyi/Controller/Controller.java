@@ -1,8 +1,7 @@
 package com.sergii.shutyi.Controller;
 
-import com.sergii.shutyi.Exceptions.BusyLoginException;
+import com.sergii.shutyi.Exceptions.BusyNickNameException;
 import com.sergii.shutyi.Model.Model;
-import com.sergii.shutyi.View.TextConstants;
 import com.sergii.shutyi.View.View;
 
 /**
@@ -62,7 +61,7 @@ public class Controller {
         while (!isNoteCreated) {
             try {
                 isNoteCreated = model.createNote(inputData);
-            } catch (BusyLoginException e) {
+            } catch (BusyNickNameException e) {
                 inputData.changeNickName(view);
             }
         }
