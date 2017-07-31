@@ -137,7 +137,7 @@ public class InputDataUtil {
      * @param view to print messages.
      */
     public void changeNickName(View view){
-        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.LOGIN_BUSY).trim());
+        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME_BUSY).trim());
     }
 
     //getters and setters
