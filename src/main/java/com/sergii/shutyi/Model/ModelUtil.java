@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Model;
 
+import com.sergii.shutyi.Controller.InputData;
 import com.sergii.shutyi.Controller.InputDataUtilConsole;
 import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
@@ -22,23 +23,20 @@ public class ModelUtil {
      * Fills all {@code Note} fields with inputted and created data.
      *
      * @param note      note to fill
-     * @param inputData contains inputted data
+     * @param inputDataUtil contains inputted data
      */
-    public void setAllData(Note note, InputDataUtilConsole inputData) {
+    public void setAllData(Note note, InputDataUtilConsole inputDataUtil) {
+        InputData inputData = inputDataUtil.getInputData();
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
         note.setMiddleName(inputData.getMiddleName());
-
         note.setLastNameInitials(makeLastNameInitials(note));
-
         note.setNickName(inputData.getNickName());
         note.setCommentary(inputData.getCommentary());
         note.setGroup(inputData.getGroup());
-
-        note.setContacts(makeContacts(inputData));
-
-        note.setAddress(makeAddress(inputData));
+        note.setContacts(makeContacts(inputDataUtil));
+        note.setAddress(makeAddress(inputDataUtil));
 
         Date date = new Date();
         note.setDateNoteAdded(date.toString());
@@ -59,10 +57,11 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Contacts} object from inputted data.
-     * @param inputData contains inputted data
+     * @param inputDataUtil contains inputted data
      * @return {@code new Contacts} object
      */
-    private Contacts makeContacts(InputDataUtilConsole inputData) {
+    private Contacts makeContacts(InputDataUtilConsole inputDataUtil) {
+        InputData inputData = inputDataUtil.getInputData();
         Contacts contacts = new Contacts();
 
         contacts.setPhoneNumberHome(inputData.getPhoneNumberHome());
@@ -76,10 +75,11 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Address} object from inputted data.
-     * @param inputData contains inputted data
+     * @param inputDataUtil contains inputted data
      * @return {@code new Contacts} object
      */
-    private Address makeAddress(InputDataUtilConsole inputData) {
+    private Address makeAddress(InputDataUtilConsole inputDataUtil) {
+        InputData inputData = inputDataUtil.getInputData();
         Address address = new Address();
 
         address.setPostIndex(inputData.getPostIndex());
@@ -99,16 +99,9 @@ public class ModelUtil {
      * @return new String with full address
      */
     private String makeFullAddress(Address address) {
-//        if (address.getPostIndex() != null &&
-//                address.getCity() != null &&
-//                address.getStreet() != null &&
-//                address.getHouseNumber() != null &&
-//                address.getApartmentNumber() != null) {
             String fullAddress = address.getPostIndex() + TextConstants.COMMA
                     + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
                     + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
             return fullAddress;
-//        }
-
     }
 }
