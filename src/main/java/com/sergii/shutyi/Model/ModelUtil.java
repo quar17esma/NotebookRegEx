@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Model;
 
-import com.sergii.shutyi.Controller.InputDataUtil;
+import com.sergii.shutyi.Controller.InputDataUtilConsole;
 import com.sergii.shutyi.Model.entity.Address;
 import com.sergii.shutyi.Model.entity.Contacts;
 import com.sergii.shutyi.Model.entity.Note;
@@ -24,7 +24,7 @@ public class ModelUtil {
      * @param note      note to fill
      * @param inputData contains inputted data
      */
-    public void setAllData(Note note, InputDataUtil inputData) {
+    public void setAllData(Note note, InputDataUtilConsole inputData) {
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
@@ -62,7 +62,7 @@ public class ModelUtil {
      * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
-    private Contacts makeContacts(InputDataUtil inputData) {
+    private Contacts makeContacts(InputDataUtilConsole inputData) {
         Contacts contacts = new Contacts();
 
         contacts.setPhoneNumberHome(inputData.getPhoneNumberHome());
@@ -79,7 +79,7 @@ public class ModelUtil {
      * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
-    private Address makeAddress(InputDataUtil inputData) {
+    private Address makeAddress(InputDataUtilConsole inputData) {
         Address address = new Address();
 
         address.setPostIndex(inputData.getPostIndex());
