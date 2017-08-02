@@ -21,6 +21,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>9.0.0.M25</version>
+        </dependency>
         <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
