@@ -41,7 +41,7 @@ public class Controller {
      * Than prints {@code Notebook} to console.
      */
     public void processUser() {
-        InputDataUtil inputData = new InputDataUtil();
+        InputDataUtilConsole inputData = new InputDataUtilConsole();
         inputData.inputAllData(view);
 
         createNote(inputData);
@@ -52,11 +52,11 @@ public class Controller {
     /**
      * Creates {@code Note} and adds it to {@code Notebook}.
      * <p>
-     * Trying to create {@code Note} from {@code InputDataUtil}.
+     * Trying to create {@code Note} from {@code InputDataUtilConsole}.
      * If all data is correct create {@code new Note}, otherwise ask user to correct data.
      * @param inputData contains data inputted by user
      */
-    public void createNote(InputDataUtil inputData){
+    public void createNote(InputDataUtilConsole inputData){
         boolean isNoteCreated = false;
         while (!isNoteCreated) {
             try {
