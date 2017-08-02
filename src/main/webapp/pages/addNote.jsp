@@ -114,6 +114,7 @@
             <label for="city">City:</label>
             <input id="city" type="text" name="city" placeholder="City" required="required">
         </div>
+
         <div class="field">
             <label for="street">Street:</label>
             <input id="street" type="text" name="street" placeholder="Street" required="required">
