@@ -65,7 +65,7 @@
 
         <div class="field">
             <label> Choose group: </label>
-            <input type="radio" name="group" value="FRIENDS" checked> Friends
+            <input type="radio" name="group" value="FRIENDS"> Friends
             <input type="radio" name="group" value="FAMILY"> Family
             <input type="radio" name="group" value="WORK"> Work
         </div>
@@ -134,10 +134,10 @@
 
         <br>
         <input class="button" type="submit" value="Submit">
-        <input class="button" type="reset" value="Reset">
-        <input class="button" type="button" value="Return"
+        <%--<input class="button" type="reset" value="Reset">--%>
+        <%--<input class="button" type="button" value="Return"--%>
                <%--onclick="location.href='AddNoteController.do?action=listGuests'"--%>
-        />
+        <%--/>--%>
     </form>
 </div>
 
