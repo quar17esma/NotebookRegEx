@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Model.entity;
 
+import com.sergii.shutyi.Controller.InputData;
 import com.sergii.shutyi.Controller.InputDataUtilConsole;
 import com.sergii.shutyi.Exceptions.BusyNickNameException;
 import com.sergii.shutyi.Model.enums.Group;
@@ -36,7 +37,7 @@ public class NotebookTest {
         address.setFullAddress("02105, Kiev, Tampere, 88, 44");
         note.setAddress(address);
 
-        notebook.addNote(note, new InputDataUtilConsole());
+        notebook.addNote(note, new InputData());
 
         Note newNote = new Note();
         newNote.setLastName("Micky");
@@ -64,7 +65,7 @@ public class NotebookTest {
         newAddress.setFullAddress("02103, Lviv, Teligy, 66, 33");
         note.setAddress(newAddress);
 
-        notebook.addNote(newNote, new InputDataUtilConsole());
+        notebook.addNote(newNote, new InputData());
     }
 
 }

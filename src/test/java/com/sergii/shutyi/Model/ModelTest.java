@@ -63,9 +63,9 @@ public class ModelTest {
         inputDataUtil.setInputData(inputData);
 
         Model model = new Model();
-        model.createNote(inputDataUtil);
+        model.createNote(inputDataUtil.getInputData());
 
-        notebookExpected.addNote(noteExpectedOne, inputDataUtil);
+        notebookExpected.addNote(noteExpectedOne, inputDataUtil.getInputData());
 
         Notebook notebookActual = model.getNotebook();
         Assert.assertEquals(notebookExpected, notebookActual);

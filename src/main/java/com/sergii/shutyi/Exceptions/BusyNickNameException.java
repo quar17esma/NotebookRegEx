@@ -1,6 +1,6 @@
 package com.sergii.shutyi.Exceptions;
 
-import com.sergii.shutyi.Controller.InputDataUtilConsole;
+import com.sergii.shutyi.Controller.InputData;
 
 /**
  * Thrown when trying to add {@code Note} to {@code Notebook} with nickName that already busy.
@@ -12,7 +12,7 @@ public class BusyNickNameException extends Exception {
     /**
      * Contains inputted data
      */
-    private InputDataUtilConsole inputData;
+    private InputData inputData;
 
     /**
      * Constructs an {@code BusyNickNameException} with the specified
@@ -20,12 +20,12 @@ public class BusyNickNameException extends Exception {
      * @param message
      * @param inputData
      */
-    public BusyNickNameException(String message, InputDataUtilConsole inputData) {
+    public BusyNickNameException(String message, InputData inputData) {
         super(message);
         this.inputData = inputData;
     }
 
-    public InputDataUtilConsole getInputData() {
+    public InputData getInputData() {
         return inputData;
     }
 }

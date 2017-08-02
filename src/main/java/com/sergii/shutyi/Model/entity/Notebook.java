@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Model.entity;
 
+import com.sergii.shutyi.Controller.InputData;
 import com.sergii.shutyi.Controller.InputDataUtilConsole;
 import com.sergii.shutyi.Exceptions.BusyNickNameException;
 
@@ -25,7 +26,7 @@ public class Notebook {
      * @throws BusyNickNameException if nick name from {@code Note} to add is already busy
      * by another {@code Note} in the {@code Notebook}
      */
-    public void addNote(Note newNote, InputDataUtilConsole inputData) throws BusyNickNameException {
+    public void addNote(Note newNote, InputData inputData) throws BusyNickNameException {
         if (!notesList.isEmpty()) {
             for (Note note:notesList) {
                 if (note.getNickName().equals(newNote.getNickName())){

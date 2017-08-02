@@ -60,7 +60,7 @@ public class Controller {
         boolean isNoteCreated = false;
         while (!isNoteCreated) {
             try {
-                isNoteCreated = model.createNote(inputData);
+                isNoteCreated = model.createNote(inputData.getInputData());
             } catch (BusyNickNameException e) {
                 inputData.changeNickName(view);
             }

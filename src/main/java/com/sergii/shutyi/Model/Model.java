@@ -1,5 +1,6 @@
 package com.sergii.shutyi.Model;
 
+import com.sergii.shutyi.Controller.InputData;
 import com.sergii.shutyi.Controller.InputDataUtilConsole;
 import com.sergii.shutyi.Exceptions.BusyNickNameException;
 import com.sergii.shutyi.Model.entity.Note;
@@ -27,7 +28,7 @@ public class Model {
      * @return {@code true} if {@code Note} is successfully created and added to {@code Notebook}.
      * @throws BusyNickNameException if {@code Note} with inputted login is already stored in {@code Notebook}.
      */
-    public boolean createNote(InputDataUtilConsole inputData) throws BusyNickNameException {
+    public boolean createNote(InputData inputData) throws BusyNickNameException {
         Note note = new Note();
         ModelUtil modelUtil = new ModelUtil();
         modelUtil.setAllData(note, inputData);

@@ -23,10 +23,9 @@ public class ModelUtil {
      * Fills all {@code Note} fields with inputted and created data.
      *
      * @param note      note to fill
-     * @param inputDataUtil contains inputted data
+     * @param inputData contains inputted data
      */
-    public void setAllData(Note note, InputDataUtilConsole inputDataUtil) {
-        InputData inputData = inputDataUtil.getInputData();
+    public void setAllData(Note note, InputData inputData) {
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
@@ -35,8 +34,8 @@ public class ModelUtil {
         note.setNickName(inputData.getNickName());
         note.setCommentary(inputData.getCommentary());
         note.setGroup(inputData.getGroup());
-        note.setContacts(makeContacts(inputDataUtil));
-        note.setAddress(makeAddress(inputDataUtil));
+        note.setContacts(makeContacts(inputData));
+        note.setAddress(makeAddress(inputData));
 
         Date date = new Date();
         note.setDateNoteAdded(date.toString());
@@ -57,11 +56,10 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Contacts} object from inputted data.
-     * @param inputDataUtil contains inputted data
+     * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
-    private Contacts makeContacts(InputDataUtilConsole inputDataUtil) {
-        InputData inputData = inputDataUtil.getInputData();
+    private Contacts makeContacts(InputData inputData) {
         Contacts contacts = new Contacts();
 
         contacts.setPhoneNumberHome(inputData.getPhoneNumberHome());
@@ -75,11 +73,10 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Address} object from inputted data.
-     * @param inputDataUtil contains inputted data
+     * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
-    private Address makeAddress(InputDataUtilConsole inputDataUtil) {
-        InputData inputData = inputDataUtil.getInputData();
+    private Address makeAddress(InputData inputData) {
         Address address = new Address();
 
         address.setPostIndex(inputData.getPostIndex());

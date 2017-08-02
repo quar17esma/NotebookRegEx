@@ -63,7 +63,7 @@ public class ModelUtilTest {
         inputDataUtil.setInputData(inputData);
 
         ModelUtil modelUtil = new ModelUtil();
-        modelUtil.setAllData(noteActual, inputDataUtil);
+        modelUtil.setAllData(noteActual, inputDataUtil.getInputData());
 
         Assert.assertEquals(noteExpect, noteActual);
     }
