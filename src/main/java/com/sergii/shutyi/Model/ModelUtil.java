@@ -8,6 +8,7 @@ import com.sergii.shutyi.Model.entity.Note;
 import com.sergii.shutyi.View.TextConstants;
 
 import java.util.Date;
+import java.util.Objects;
 
 
 /**
@@ -26,6 +27,8 @@ public class ModelUtil {
      * @param inputData contains inputted data
      */
     public void setAllData(Note note, InputData inputData) {
+        Objects.requireNonNull(note);
+        Objects.requireNonNull(inputData);
 
         note.setLastName(inputData.getLastName());
         note.setFirstName(inputData.getFirstName());
@@ -49,6 +52,8 @@ public class ModelUtil {
      * @return {@code new String} with last name and initial
      */
     private String makeLastNameInitials(Note note) {
+        Objects.requireNonNull(note);
+
         String lastNameInitials = note.getLastName() + TextConstants.SPACE
                 + note.getFirstName().substring(0, 1) + TextConstants.DOT;
         return lastNameInitials;
@@ -56,10 +61,13 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Contacts} object from inputted data.
+     *
      * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
     private Contacts makeContacts(InputData inputData) {
+        Objects.requireNonNull(inputData);
+
         Contacts contacts = new Contacts();
 
         contacts.setPhoneNumberHome(inputData.getPhoneNumberHome());
@@ -73,12 +81,14 @@ public class ModelUtil {
 
     /**
      * Creates {@code new Address} object from inputted data.
+     *
      * @param inputData contains inputted data
      * @return {@code new Contacts} object
      */
     private Address makeAddress(InputData inputData) {
-        Address address = new Address();
+        Objects.requireNonNull(inputData);
 
+        Address address = new Address();
         address.setPostIndex(inputData.getPostIndex());
         address.setCity(inputData.getCity());
         address.setStreet(inputData.getStreet());
@@ -96,9 +106,12 @@ public class ModelUtil {
      * @return new String with full address
      */
     private String makeFullAddress(Address address) {
-            String fullAddress = address.getPostIndex() + TextConstants.COMMA
-                    + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
-                    + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
-            return fullAddress;
+        Objects.requireNonNull(address);
+
+        String fullAddress = address.getPostIndex() + TextConstants.COMMA
+                + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
+                + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
+
+        return fullAddress;
     }
 }
