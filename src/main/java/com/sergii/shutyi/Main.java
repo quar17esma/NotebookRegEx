@@ -1,6 +1,6 @@
 package com.sergii.shutyi;
 
-import com.sergii.shutyi.Controller.Controller;
+import com.sergii.shutyi.Controller.ControllerConsole;
 import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.View.View;
 
@@ -12,7 +12,7 @@ public class Main {
         // Initialization
         Model model = new Model();
         View view = new View();
-        Controller controller = new Controller(model, view);
+        ControllerConsole controller = new ControllerConsole(model, view);
         // Run
         controller.processUser();
     }

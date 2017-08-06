@@ -5,7 +5,7 @@ import com.sergii.shutyi.Model.Model;
 import com.sergii.shutyi.View.View;
 
 /**
- * The {@code Controller} acts on both model and view.
+ * The {@code ControllerConsole} acts on both model and view.
  * <p>
  * It controls the data flow into model object and updates the view whenever data changes.
  * It keeps view and model separate.
@@ -13,7 +13,7 @@ import com.sergii.shutyi.View.View;
  * @author S.Shutyi
  * Created 26.07.2017.
  */
-public class Controller {
+public class ControllerConsole {
 
     /**
      * Used for business logic
@@ -25,11 +25,11 @@ public class Controller {
     View view;
 
     /**
-     * Initializes a newly created {@code Controller}
+     * Initializes a newly created {@code ControllerConsole}
      * @param model answering for the business logic
      * @param view answering for the visualization
      */
-    public Controller(Model model, View view) {
+    public ControllerConsole(Model model, View view) {
         this.model = model;
         this.view = view;
     }
