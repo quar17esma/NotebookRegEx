@@ -30,7 +30,8 @@
 </head>
 <body>
 <div class="main">
-    <form name="addNoteForm" action="/AddNoteController.do" method="post">
+    <form name="addNoteForm" action="controller" method="post">
+        <input type="hidden" name="command" value="ADD_NOTE">
 
         <div class="field">
             <label for="firstName">First name:</label>
