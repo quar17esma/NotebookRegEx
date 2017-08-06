@@ -18,7 +18,7 @@ public class AddNoteController extends HttpServlet {
 
     private static final long serialVersionUID = 102831973239L;
 
-    public static final String LIST_GUEST = "/ShowNotebook.jsp";
+    public static final String LIST_GUEST = "/showNotebook.jsp";
 
     Model model = new Model();
     View view = new View();
@@ -46,7 +46,7 @@ public class AddNoteController extends HttpServlet {
         createNote(inputDataUtil.getInputData());
         view.printNotebook(model);
 
-        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/pages/ShowNotebook.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/pages/showNotebook.jsp");
         request.setAttribute("Notebook", model.getNotebook());
         view.forward(request, response);
     }
