@@ -135,10 +135,7 @@
 
         <br>
         <input class="button" type="submit" value="Submit">
-        <%--<input class="button" type="reset" value="Reset">--%>
-        <%--<input class="button" type="button" value="Return"--%>
-               <%--onclick="location.href='AddNoteController.do?action=listGuests'"--%>
-        <%--/>--%>
+        
     </form>
 </div>
 
