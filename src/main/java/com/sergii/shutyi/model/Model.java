@@ -32,6 +32,7 @@ public class Model {
         ModelUtil modelUtil = new ModelUtil();
         modelUtil.setAllData(note, inputData);
         notebook.addNote(note, inputData);
+
         return true;
     }
 
