@@ -39,12 +39,13 @@ public class InputDataUtilWeb {
 
     private Group inputGroup(String group) {
         Objects.requireNonNull(group);
-        switch (group) {
-            case "FRIENDS":
+        Group inputGroup = Group.valueOf(group.toUpperCase());
+        switch (inputGroup) {
+            case FRIENDS:
                 return Group.FRIENDS;
-            case "FAMILY":
+            case FAMILY:
                 return Group.FAMILY;
-            case "WORK":
+            case WORK:
                 return Group.WORK;
             default:
                 throw new IllegalArgumentException("Unsupported group " + group);
