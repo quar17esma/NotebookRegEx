@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%--<fmt:setLocale value="ru_RU" />--%>
+<fmt:setLocale value="en_US" />
 <fmt:setBundle basename="Labels"/>
 <html>
 <head>

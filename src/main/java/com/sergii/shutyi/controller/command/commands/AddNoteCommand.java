@@ -5,6 +5,7 @@ import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.controller.InputDataUtilWeb;
+import com.sergii.shutyi.controller.manager.MessageManager;
 import com.sergii.shutyi.exceptions.BusyNickNameException;
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,6 +23,7 @@ public class AddNoteCommand implements ActionCommand {
             page = ConfigurationManager.getProperty("path.page.add.note.success");
         } catch (BusyNickNameException e) {
             request.setAttribute("inputData", inputDataUtil.getInputData());
+            request.setAttribute("errorBusyNickName", MessageManager.getProperty("error.busy.nickname"));
             page = ConfigurationManager.getProperty("path.page.add.note");
         }
 

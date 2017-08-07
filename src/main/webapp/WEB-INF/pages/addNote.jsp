@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<fmt:setLocale value="ru_RU" />--%>
+<fmt:setLocale value="en_US" />
 <fmt:setBundle basename="Labels"/>
 <!DOCTYPE html>
 <html>
@@ -30,6 +30,9 @@
             align-items: center;
             justify-content: center;
             height: 100%;
+        }
+        .error {
+            color: red;
         }
     </style>
 </head>
@@ -70,6 +73,10 @@
                 <input id="nickName" type="text" name="nickName" placeholder="Nick name"
                        required="required" value="${inputData.nickName}">
             </div>
+            <div class="error">
+                <c:out value="${errorBusyNickName}" />
+            </div>
+
 
             <div class="field">
                 <label for="commentary">
