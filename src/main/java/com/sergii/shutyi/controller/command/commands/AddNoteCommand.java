@@ -17,23 +17,18 @@ public class AddNoteCommand implements ActionCommand {
 
         InputDataUtilWeb inputDataUtil = new InputDataUtilWeb();
         inputDataUtil.inputAllData(request);
-        createNote(inputDataUtil.getInputData());
+        try {
+            createNote(inputDataUtil.getInputData());
+            page = ConfigurationManager.getProperty("path.page.add.note.success");
+        } catch (BusyNickNameException e) {
+            request.setAttribute("inputData", inputDataUtil.getInputData());
+            page = ConfigurationManager.getProperty("path.page.add.note");
+        }
 
-
-
-        //перейти на страницу "запись удачно добавлена" или ошибка
-        page = ConfigurationManager.getProperty("path.page.add.note.success");
         return page;
     }
 
-    public void createNote(InputData inputData){
-        boolean isNoteCreated = false;
-        while (!isNoteCreated) {
-            try {
-                isNoteCreated = Controller.getModel().createNote(inputData);
-            } catch (BusyNickNameException e) {
-//                inputData.changeNickName(view);
-            }
-        }
+    public void createNote(InputData inputData) throws BusyNickNameException {
+        Controller.getModel().createNote(inputData);
     }
 }
