@@ -1,12 +1,12 @@
-package com.sergii.shutyi.vieww;
+package com.sergii.shutyi.view;
 
-import com.sergii.shutyi.modell.enums.Group;
+import com.sergii.shutyi.model.enums.Group;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * The {@code TextConstants} interface contains {@code String} constants for visualization by {@code vieww}.
+ * The {@code TextConstants} interface contains {@code String} constants for visualization by {@code view}.
  * @see View
  * @author S.Shutyi
  * Created on 26.07.2017.

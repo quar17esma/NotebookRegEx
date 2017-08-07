@@ -1,6 +1,6 @@
-package com.sergii.shutyi.exceptionss;
+package com.sergii.shutyi.exceptions;
 
-import com.sergii.shutyi.controllerr.InputData;
+import com.sergii.shutyi.controller.InputData;
 
 /**
  * Thrown when trying to add {@code Note} to {@code Notebook} with nickName that already busy.

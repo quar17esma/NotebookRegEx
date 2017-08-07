@@ -1,4 +1,4 @@
-package com.sergii.shutyi.modell.enums;
+package com.sergii.shutyi.model.enums;
 
 /**
  * The {@code Group} enum represents possible groups for {@code Note}.

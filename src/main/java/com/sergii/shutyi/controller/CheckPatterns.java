@@ -1,4 +1,4 @@
-package com.sergii.shutyi.controllerr;
+package com.sergii.shutyi.controller;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.sergii.shutyi.modell.entity;
+package com.sergii.shutyi.model.entity;
 
 /**
  * Represents address of the person in the note.

@@ -1,10 +1,10 @@
-package com.sergii.shutyi.modell;
+package com.sergii.shutyi.model;
 
-import com.sergii.shutyi.controllerr.InputData;
-import com.sergii.shutyi.modell.entity.Address;
-import com.sergii.shutyi.modell.entity.Contacts;
-import com.sergii.shutyi.modell.entity.Note;
-import com.sergii.shutyi.vieww.TextConstants;
+import com.sergii.shutyi.controller.InputData;
+import com.sergii.shutyi.model.entity.Address;
+import com.sergii.shutyi.model.entity.Contacts;
+import com.sergii.shutyi.model.entity.Note;
+import com.sergii.shutyi.view.TextConstants;
 
 import java.util.Date;
 import java.util.Objects;

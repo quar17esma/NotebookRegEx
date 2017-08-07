@@ -1,7 +1,7 @@
-package com.sergii.shutyi.controllerr;
+package com.sergii.shutyi.controller;
 
-import com.sergii.shutyi.modell.enums.Group;
-import com.sergii.shutyi.vieww.View;
+import com.sergii.shutyi.model.enums.Group;
+import com.sergii.shutyi.view.View;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
@@ -59,7 +59,7 @@ public class InputDataUtilWeb {
      * @param view to print messages.
      */
     public void changeNickName(View view) {
-//        setNickName(inputData(vieww, CheckPatterns.NICKNAME, TextConstants.NICK_NAME_BUSY).trim());
+//        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME_BUSY).trim());
     }
 
     //getters and setters

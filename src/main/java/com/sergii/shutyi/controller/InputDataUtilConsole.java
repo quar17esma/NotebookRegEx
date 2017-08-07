@@ -1,8 +1,8 @@
-package com.sergii.shutyi.controllerr;
+package com.sergii.shutyi.controller;
 
-import com.sergii.shutyi.modell.enums.Group;
-import com.sergii.shutyi.vieww.TextConstants;
-import com.sergii.shutyi.vieww.View;
+import com.sergii.shutyi.model.enums.Group;
+import com.sergii.shutyi.view.TextConstants;
+import com.sergii.shutyi.view.View;
 import java.util.Scanner;
 
 /**

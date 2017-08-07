@@ -1,8 +1,8 @@
 package com.sergii.shutyi;
 
-import com.sergii.shutyi.controllerr.ControllerConsole;
-import com.sergii.shutyi.modell.Model;
-import com.sergii.shutyi.vieww.View;
+import com.sergii.shutyi.controller.ControllerConsole;
+import com.sergii.shutyi.model.Model;
+import com.sergii.shutyi.view.View;
 
 /**
  * Created by S.Shutyi on 26.07.2017.

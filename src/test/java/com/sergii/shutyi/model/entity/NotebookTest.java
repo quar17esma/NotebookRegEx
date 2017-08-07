@@ -1,8 +1,8 @@
-package com.sergii.shutyi.modell.entity;
+package com.sergii.shutyi.model.entity;
 
-import com.sergii.shutyi.controllerr.InputData;
-import com.sergii.shutyi.exceptionss.BusyNickNameException;
-import com.sergii.shutyi.modell.enums.Group;
+import com.sergii.shutyi.controller.InputData;
+import com.sergii.shutyi.exceptions.BusyNickNameException;
+import com.sergii.shutyi.model.enums.Group;
 import org.junit.Test;
 
 public class NotebookTest {

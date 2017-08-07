@@ -1,14 +1,14 @@
-package com.sergii.shutyi.controllerr;
+package com.sergii.shutyi.controller;
 
-import com.sergii.shutyi.exceptionss.BusyNickNameException;
-import com.sergii.shutyi.modell.Model;
-import com.sergii.shutyi.vieww.View;
+import com.sergii.shutyi.exceptions.BusyNickNameException;
+import com.sergii.shutyi.model.Model;
+import com.sergii.shutyi.view.View;
 
 /**
- * The {@code ControllerConsole} acts on both modell and vieww.
+ * The {@code ControllerConsole} acts on both model and view.
  * <p>
- * It controls the data flow into modell object and updates the vieww whenever data changes.
- * It keeps vieww and modell separate.
+ * It controls the data flow into model object and updates the view whenever data changes.
+ * It keeps view and model separate.
  *
  * @author S.Shutyi
  * Created 26.07.2017.

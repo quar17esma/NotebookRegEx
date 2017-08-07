@@ -1,7 +1,7 @@
-package com.sergii.shutyi.modell.entity;
+package com.sergii.shutyi.model.entity;
 
-import com.sergii.shutyi.controllerr.InputData;
-import com.sergii.shutyi.exceptionss.BusyNickNameException;
+import com.sergii.shutyi.controller.InputData;
+import com.sergii.shutyi.exceptions.BusyNickNameException;
 
 import java.util.ArrayList;
 

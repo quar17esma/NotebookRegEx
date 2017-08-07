@@ -1,13 +1,13 @@
-package com.sergii.shutyi.vieww;
+package com.sergii.shutyi.view;
 
-import com.sergii.shutyi.modell.Model;
-import com.sergii.shutyi.modell.entity.Note;
+import com.sergii.shutyi.model.Model;
+import com.sergii.shutyi.model.entity.Note;
 import java.util.ArrayList;
 
-import static com.sergii.shutyi.vieww.TextConstants.*;
+import static com.sergii.shutyi.view.TextConstants.*;
 
 /**
- * The {@code vieww} class represents the visualization.
+ * The {@code view} class represents the visualization.
  *
  * @author S.Shutyi
  * Created on 26.07.2017.
