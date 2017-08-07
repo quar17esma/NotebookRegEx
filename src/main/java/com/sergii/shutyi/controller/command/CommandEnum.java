@@ -10,6 +10,11 @@ public enum CommandEnum {
         {
             this.command = new ShowNotebookCommand();
         }
+    },
+    INPUT_NOTE{
+        {
+            this.command = new InputNoteCommand();
+        }
     };
 
     ActionCommand command;
