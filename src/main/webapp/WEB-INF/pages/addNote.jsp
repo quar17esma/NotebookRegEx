@@ -1,14 +1,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<fmt:setLocale value="ru_RU" />--%>
+<fmt:setBundle basename="Labels"/>
 <!DOCTYPE html>
 <html>
 <head>
-    <fmt:bundle basename="Labels">
         <title>
             <fmt:message key="add.note"/>
         </title>
-    </fmt:bundle>
-
     <style>
         .field {
             clear: both;
@@ -34,7 +33,7 @@
     </style>
 </head>
 <body>
-<fmt:bundle basename="Labels">
+
     <div class="main">
         <form name="addNoteForm" action="controller" method="post">
             <input type="hidden" name="command" value="ADD_NOTE">
@@ -84,9 +83,9 @@
                 <label>
                     <fmt:message key="group"/>
                 </label>
-                <input type="radio" name="group" value="FRIENDS"> Friends
-                <input type="radio" name="group" value="FAMILY"> Family
-                <input type="radio" name="group" value="WORK"> Work
+                <input type="radio" name="group" value="FRIENDS"> <fmt:message key="friends"/>
+                <input type="radio" name="group" value="FAMILY"> <fmt:message key="family"/>
+                <input type="radio" name="group" value="WORK"> <fmt:message key="work"/>
             </div>
 
             <div class="field">
@@ -176,6 +175,5 @@
 
         </form>
     </div>
-</fmt:bundle>
 </body>
 </html>
