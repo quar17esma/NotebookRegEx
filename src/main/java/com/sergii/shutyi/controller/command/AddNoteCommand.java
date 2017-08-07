@@ -23,7 +23,7 @@ public class AddNoteCommand implements ActionCommand {
 //        view.forward(request, response);
 
         //перейти на страницу "запись удачно добавлена" или ошибка
-        page = ConfigurationManager.getProperty("path.page.show.notebook");
+        page = ConfigurationManager.getProperty("path.page.add.note.success");
         return page;
     }
 
