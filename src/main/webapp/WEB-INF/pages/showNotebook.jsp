@@ -30,60 +30,30 @@
     <title>Show Notebook</title>
 </head>
 <body>
-
-<table>
-
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Middle name</th>
-        <th>Initials</th>
-        <th>Nick</th>
-        <th>Commentary</th>
-        <th>Group</th>
-        <th>Home Phone #</th>
-        <th>Mob. Phone #</th>
-        <th>Mob. Phone # (Alt.)</th>
-        <th>e-mail</th>
-        <th>skype</th>
-        <th>Post code</th>
-        <th>City</th>
-        <th>Street</th>
-        <th>House #</th>
-        <th>Apartment #</th>
-        <th>Added</th>
-        <th>Last Modified</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <c:forEach items="${Notebook.notesList}" var="note">
-        <tr>
-            <td><c:out value="${note.firstName}"/></td>
-            <td><c:out value="${note.lastName}"/></td>
-            <td><c:out value="${note.middleName}"/></td>
-            <td><c:out value="${note.lastNameInitials}"/></td>
-            <td><c:out value="${note.nickName}"/></td>
-            <td><c:out value="${note.commentary}"/></td>
-            <td><c:out value="${note.group.toString()}"/></td>
-            <td><c:out value="${note.contacts.phoneNumberHome}"/></td>
-            <td><c:out value="${note.contacts.phoneNumberMobile}"/></td>
-            <td><c:out value="${note.contacts.phoneNumberMobileAlt}"/></td>
-            <td><c:out value="${note.contacts.email}"/></td>
-            <td><c:out value="${note.contacts.skype}"/></td>
-            <td><c:out value="${note.address.postIndex}"/></td>
-            <td><c:out value="${note.address.city}"/></td>
-            <td><c:out value="${note.address.street}"/></td>
-            <td><c:out value="${note.address.houseNumber}"/></td>
-            <td><c:out value="${note.address.apartmentNumber}"/></td>
-            <td><c:out value="${note.address.fullAddress}"/></td>
-            <td><c:out value="${note.dateNoteAdded}"/></td>
-            <td><c:out value="${note.dateNoteLastModified}"/></td>
-        </tr>
+<c:forEach items="${Notebook.notesList}" var="note">
+    Name: <c:out value="${note.firstName}"/><br/>
+    Surname: <c:out value="${note.lastName}"/><br/>
+    Middle name: <c:out value="${note.middleName}"/><br/>
+    Initials: <c:out value="${note.lastNameInitials}"/><br/>
+    Nick: <c:out value="${note.nickName}"/><br/>
+    Commentary: <c:out value="${note.commentary}"/><br/>
+    Group: <c:out value="${note.group.toString()}"/><br/>
+    Home Phone #: <c:out value="${note.contacts.phoneNumberHome}"/><br/>
+    Mob. Phone #: <c:out value="${note.contacts.phoneNumberMobile}"/><br/>
+    Mob. Phone # (Alt.): <c:out value="${note.contacts.phoneNumberMobileAlt}"/><br/>
+    e-mail: <c:out value="${note.contacts.email}"/><br/>
+    skype: <c:out value="${note.contacts.skype}"/><br/>
+    Post code: <c:out value="${note.address.postIndex}"/><br/>
+    City: <c:out value="${note.address.city}"/><br/>
+    Street: <c:out value="${note.address.street}"/><br/>
+    House #; <c:out value="${note.address.houseNumber}"/><br/>
+    Apartment #: <c:out value="${note.address.apartmentNumber}"/><br/>
+    Full address: <c:out value="${note.address.fullAddress}"/><br/>
+    <br/>
+    Added: <c:out value="${note.dateNoteAdded}"/><br/>
+    Last Modified: <c:out value="${note.dateNoteLastModified}"/><br/>
+    <hr>
     </c:forEach>
-    </tbody>
-</table>
 <br>
 
 </body>
