@@ -1,4 +1,4 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controller.command;
 
 public enum CommandEnum {
     ADD_NOTE{

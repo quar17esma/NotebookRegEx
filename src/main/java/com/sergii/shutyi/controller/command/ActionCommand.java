@@ -1,4 +1,4 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controller.command;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,9 +1,12 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controller.command;
 
-import com.sergii.shutyi.Exceptions.BusyNickNameException;
-import com.sergii.shutyi.Model.Model;
+import com.sergii.shutyi.controller.ConfigurationManager;
+import com.sergii.shutyi.controller.InputData;
+import com.sergii.shutyi.controller.InputDataUtilWeb;
+import com.sergii.shutyi.controller.command.ActionCommand;
+import com.sergii.shutyi.exceptions.BusyNickNameException;
+import com.sergii.shutyi.model.Model;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
 public class AddNoteCommand implements ActionCommand {
