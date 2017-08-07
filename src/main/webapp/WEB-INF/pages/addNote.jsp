@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<fmt:setLocale value="ru_RU" />--%>
 <fmt:setBundle basename="Labels"/>
 <!DOCTYPE html>
@@ -50,8 +51,8 @@
                 <label for="lastName">
                     <fmt:message key="last.name"/>
                 </label>
-                <input id="lastName" type="text" name="lastName" placeholder="Surname" value="${inputData.lastName}"
-                       required="required">
+                <input id="lastName" type="text" name="lastName" placeholder="Surname"
+                       required="required" value="${inputData.lastName}">
             </div>
 
             <div class="field">
@@ -59,7 +60,7 @@
                     <fmt:message key="middle.name"/>
                 </label>
                 <input id="middleName" type="text" name="middleName" placeholder="Middle name"
-                       required="required">
+                        required="required" value="${inputData.middleName}">
             </div>
 
             <div class="field">
@@ -67,7 +68,7 @@
                     <fmt:message key="nick.name"/>
                 </label>
                 <input id="nickName" type="text" name="nickName" placeholder="Nick name"
-                       required="required">
+                       required="required" value="${inputData.nickName}">
             </div>
 
             <div class="field">
@@ -76,14 +77,15 @@
                 </label><br>
                 <textarea id="commentary" name="commentary" placeholder="Commentary" cols="41" wrap="soft"
                           required="required">
-            </textarea>
+                    <c:out value="${inputData.commentary}" />
+                </textarea>
             </div>
 
             <div class="field">
                 <label>
                     <fmt:message key="group"/>
                 </label>
-                <input type="radio" name="group" value="FRIENDS"> <fmt:message key="friends"/>
+                <input type="radio" name="group" value="FRIENDS" required="required"> <fmt:message key="friends"/>
                 <input type="radio" name="group" value="FAMILY"> <fmt:message key="family"/>
                 <input type="radio" name="group" value="WORK"> <fmt:message key="work"/>
             </div>
@@ -93,7 +95,7 @@
                     <fmt:message key="phone.number.home"/>
                 </label>
                 <input id="homePhoneNumber" type="tel" name="homePhoneNumber" placeholder="+38(XXX)XXX-XX-XX"
-                       required="required"
+                       required="required" value="${inputData.phoneNumberHome}"
                        pattern="[\+]38[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}"
                        title="Phone number format +38(XXX)XXX-XX-XX">
             </div>
@@ -103,7 +105,7 @@
                     <fmt:message key="phone.number.mobile"/>
                 </label>
                 <input id="mobilePhoneNumber" type="tel" name="mobilePhoneNumber" placeholder="+38(XXX)XXX-XX-XX"
-                       required="required"
+                       required="required" value="${inputData.phoneNumberMobile}"
                        pattern="[\+]38[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}"
                        title="Phone number format +38(XXX)XXX-XX-XX">
             </div>
@@ -113,7 +115,7 @@
                     <fmt:message key="phone.number.mobile.alt"/>
                 </label>
                 <input id="mobilePhoneNumberAlt" type="tel" name="mobilePhoneNumberAlt" placeholder="+38(XXX)XXX-XX-XX"
-                       required="required"
+                       required="required" value="${inputData.phoneNumberMobileAlt}"
                        pattern="[\+]38[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}"
                        title="Phone number format +38(XXX)XXX-XX-XX">
             </div>
@@ -122,14 +124,16 @@
                 <label for="email">
                     <fmt:message key="email"/>
                 </label>
-                <input id="email" type="email" name="email" placeholder="e-mail" required="required">
+                <input id="email" type="email" name="email" placeholder="e-mail" required="required"
+                       value="${inputData.email}">
             </div>
 
             <div class="field">
                 <label for="skype">
                     <fmt:message key="skype"/>
                 </label>
-                <input id="skype" type="text" name="skype" placeholder="skype" required="required">
+                <input id="skype" type="text" name="skype" placeholder="skype" required="required"
+                       value="${inputData.skype}">
             </div>
 
             <div class="field">
@@ -137,21 +141,23 @@
                     <fmt:message key="post.index"/>
                 </label>
                 <input id="postIndex" type="text" name="postIndex" placeholder="Post index"
-                       required="required">
+                       required="required" value="${inputData.postIndex}">
             </div>
 
             <div class="field">
                 <label for="city">
                     <fmt:message key="city"/>
                 </label>
-                <input id="city" type="text" name="city" placeholder="City" required="required">
+                <input id="city" type="text" name="city" placeholder="City" required="required"
+                       value="${inputData.city}">
             </div>
 
             <div class="field">
                 <label for="street">
                     <fmt:message key="street"/>
                 </label>
-                <input id="street" type="text" name="street" placeholder="Street" required="required">
+                <input id="street" type="text" name="street" placeholder="Street" required="required"
+                       value="${inputData.street}">
             </div>
 
             <div class="field">
@@ -159,15 +165,15 @@
                     <fmt:message key="house"/>
                 </label>
                 <input id="houseNumber" type="text" name="houseNumber" placeholder="House number"
-                       required="required">
+                       required="required" value="${inputData.houseNumber}">
             </div>
 
             <div class="field">
                 <label for="apartmentNumber">
                     <fmt:message key="apartment"/>
                 </label>
-                <input id="apartmentNumber" type="text" name="apartmentNumber"
-                       placeholder="Apartment number" required="required">
+                <input id="apartmentNumber" type="text" name="apartmentNumber" placeholder="Apartment number"
+                       required="required" value="${inputData.apartmentNumber}">
             </div>
 
             <br>
