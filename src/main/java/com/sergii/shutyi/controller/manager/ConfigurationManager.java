@@ -1,4 +1,4 @@
-package com.sergii.shutyi.controllerr.manager;
+package com.sergii.shutyi.controller.manager;
 
 import java.util.ResourceBundle;
 
