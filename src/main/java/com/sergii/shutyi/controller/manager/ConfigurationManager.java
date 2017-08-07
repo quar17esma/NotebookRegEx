@@ -1,6 +1,5 @@
 package com.sergii.shutyi.controller.manager;
 
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ConfigurationManager {
