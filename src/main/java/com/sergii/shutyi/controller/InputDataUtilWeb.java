@@ -22,7 +22,7 @@ public class InputDataUtilWeb {
         inputData.setMiddleName(request.getParameter("middleName").trim());
         inputData.setNickName(request.getParameter("nickName").trim());
         inputData.setCommentary(request.getParameter("commentary").trim());
-        inputData.setGroup(inputGroup(request.getParameter("group")));
+        inputData.setGroup(inputGroup(request.getParameter("group.choose.option")));
 
         inputData.setPhoneNumberHome(request.getParameter("homePhoneNumber").trim());
         inputData.setPhoneNumberMobile(request.getParameter("mobilePhoneNumber").trim());

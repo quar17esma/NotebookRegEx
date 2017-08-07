@@ -25,7 +25,7 @@ public interface TextConstants {
     String MIDDLE_NAME = bundle.getString("middle.name");
     String NICK_NAME = bundle.getString("nick.name");
     String COMMENTARY = bundle.getString("commentary");
-    String GROUP = bundle.getString("group")
+    String GROUP = bundle.getString("group.choose.option")
             + Group.FAMILY + ", " + Group.FRIENDS + ", " + Group.WORK;
     String PHONE_NUMBER_HOME = bundle.getString("phone.number.home");
     String PHONE_NUMBER_MOBILE = bundle.getString("phone.number.mobile");
