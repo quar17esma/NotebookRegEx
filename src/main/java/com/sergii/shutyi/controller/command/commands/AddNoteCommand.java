@@ -1,5 +1,6 @@
-package com.sergii.shutyi.controller.command;
+package com.sergii.shutyi.controller.command.commands;
 
+import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.controller.InputDataUtilWeb;

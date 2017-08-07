@@ -1,17 +1,15 @@
-package com.sergii.shutyi.controller.command;
+package com.sergii.shutyi.controller.command.commands;
 
+import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ShowNotebookCommand implements ActionCommand {
+public class InputNoteCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
-
-//        request.setAttribute();
-
-        page = ConfigurationManager.getProperty("path.page.show.notebook");
+        page = ConfigurationManager.getProperty("path.page.add.note");
         return page;
     }
 }
