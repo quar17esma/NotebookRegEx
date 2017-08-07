@@ -1,9 +1,11 @@
 package com.sergii.shutyi.controller.manager;
 
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ConfigurationManager {
-    private final static ResourceBundle resourceBundle = ResourceBundle.getBundle("resources.config");
+    private final static ResourceBundle resourceBundle =
+            ResourceBundle.getBundle("config");
 
     private ConfigurationManager(){}
 

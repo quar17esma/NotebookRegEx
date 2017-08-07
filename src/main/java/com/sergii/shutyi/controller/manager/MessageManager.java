@@ -3,7 +3,7 @@ package com.sergii.shutyi.controller.manager;
 import java.util.ResourceBundle;
 
 public class MessageManager {
-    public static final ResourceBundle resourceBundle = ResourceBundle.getBundle("resources.messages");
+    public static final ResourceBundle resourceBundle = ResourceBundle.getBundle("messages");
 
     private MessageManager(){}
 
