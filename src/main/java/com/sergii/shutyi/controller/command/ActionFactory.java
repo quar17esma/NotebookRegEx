@@ -1,10 +1,6 @@
 package com.sergii.shutyi.controller.command;
 
-import com.sergii.shutyi.controller.MessageManager;
-import com.sergii.shutyi.controller.command.ActionCommand;
-import com.sergii.shutyi.controller.command.CommandEnum;
-import com.sergii.shutyi.controller.command.EmptyCommand;
-
+import com.sergii.shutyi.controller.manager.MessageManager;
 import javax.servlet.http.HttpServletRequest;
 
 public class ActionFactory {
