@@ -4,6 +4,7 @@ import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.command.ActionFactory;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.controller.manager.MessageManager;
+import com.sergii.shutyi.model.Model;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import java.io.IOException;
 
 @WebServlet(name = "controller", urlPatterns = "/controller", loadOnStartup = 1)
 public class Controller extends HttpServlet {
+    static Model model = new Model();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,5 +44,13 @@ public class Controller extends HttpServlet {
             request.getSession().setAttribute("nullPage", MessageManager.getProperty("message.nullpage"));
             response.sendRedirect(request.getContextPath() + page);
         }
+    }
+
+    public static Model getModel() {
+        return model;
+    }
+
+    public static void setModel(Model model) {
+        Controller.model = model;
     }
 }
