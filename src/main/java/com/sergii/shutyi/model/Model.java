@@ -1,13 +1,12 @@
-package com.sergii.shutyi.Model;
+package com.sergii.shutyi.modell;
 
-import com.sergii.shutyi.Controller.InputData;
-import com.sergii.shutyi.Controller.InputDataUtilConsole;
-import com.sergii.shutyi.Exceptions.BusyNickNameException;
-import com.sergii.shutyi.Model.entity.Note;
-import com.sergii.shutyi.Model.entity.Notebook;
+import com.sergii.shutyi.controllerr.InputData;
+import com.sergii.shutyi.exceptionss.BusyNickNameException;
+import com.sergii.shutyi.modell.entity.Note;
+import com.sergii.shutyi.modell.entity.Notebook;
 
 /**
- * The {@code Model} class represents entities to store data and business logic.
+ * The {@code modell} class represents entities to store data and business logic.
  *
  * @author S.Shutyi
  * Created on 26.07.2017.

@@ -1,8 +1,8 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controllerr;
 
-import com.sergii.shutyi.Model.enums.Group;
-import com.sergii.shutyi.View.TextConstants;
-import com.sergii.shutyi.View.View;
+import com.sergii.shutyi.modell.enums.Group;
+import com.sergii.shutyi.vieww.TextConstants;
+import com.sergii.shutyi.vieww.View;
 import java.util.Scanner;
 
 /**
@@ -123,7 +123,6 @@ public class InputDataUtilConsole {
     }
 
     //getters and setters
-
     public InputData getInputData() {
         return inputData;
     }
@@ -131,133 +130,4 @@ public class InputDataUtilConsole {
     public void setInputData(InputData inputData) {
         this.inputData = inputData;
     }
-
-
-//    public String getLastName() {
-//        return lastName;
-//    }
-//
-//    public void setLastName(String lastName) {
-//        this.lastName = lastName;
-//    }
-//
-//    public String getFirstName() {
-//        return firstName;
-//    }
-//
-//    public void setFirstName(String firstName) {
-//        this.firstName = firstName;
-//    }
-//
-//    public String getMiddleName() {
-//        return middleName;
-//    }
-//
-//    public void setMiddleName(String middleName) {
-//        this.middleName = middleName;
-//    }
-//
-//    public String getNickName() {
-//        return nickName;
-//    }
-//
-//    public void setNickName(String nickName) {
-//        this.nickName = nickName;
-//    }
-//
-//    public String getCommentary() {
-//        return commentary;
-//    }
-//
-//    public void setCommentary(String commentary) {
-//        this.commentary = commentary;
-//    }
-//
-//    public Group getGroup() {
-//        return group;
-//    }
-//
-//    public void setGroup(Group group) {
-//        this.group = group;
-//    }
-//
-//    public String getPhoneNumberHome() {
-//        return phoneNumberHome;
-//    }
-//
-//    public void setPhoneNumberHome(String phoneNumberHome) {
-//        this.phoneNumberHome = phoneNumberHome;
-//    }
-//
-//    public String getPhoneNumberMobile() {
-//        return phoneNumberMobile;
-//    }
-//
-//    public void setPhoneNumberMobile(String phoneNumberMobile) {
-//        this.phoneNumberMobile = phoneNumberMobile;
-//    }
-//
-//    public String getPhoneNumberMobileAlt() {
-//        return phoneNumberMobileAlt;
-//    }
-//
-//    public void setPhoneNumberMobileAlt(String phoneNumberMobileAlt) {
-//        this.phoneNumberMobileAlt = phoneNumberMobileAlt;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getSkype() {
-//        return skype;
-//    }
-//
-//    public void setSkype(String skype) {
-//        this.skype = skype;
-//    }
-//
-//    public String getPostIndex() {
-//        return postIndex;
-//    }
-//
-//    public void setPostIndex(String postIndex) {
-//        this.postIndex = postIndex;
-//    }
-//
-//    public String getCity() {
-//        return city;
-//    }
-//
-//    public void setCity(String city) {
-//        this.city = city;
-//    }
-//
-//    public String getStreet() {
-//        return street;
-//    }
-//
-//    public void setStreet(String street) {
-//        this.street = street;
-//    }
-//
-//    public String getHouseNumber() {
-//        return houseNumber;
-//    }
-//
-//    public void setHouseNumber(String houseNumber) {
-//        this.houseNumber = houseNumber;
-//    }
-//
-//    public String getApartmentNumber() {
-//        return apartmentNumber;
-//    }
-//
-//    public void setApartmentNumber(String apartmentNumber) {
-//        this.apartmentNumber = apartmentNumber;
-//    }
 }

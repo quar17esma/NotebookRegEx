@@ -1,4 +1,4 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controllerr;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/controller")
+@WebServlet("/controllerr")
 public class Controller extends HttpServlet {
 
     @Override

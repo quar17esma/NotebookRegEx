@@ -1,4 +1,4 @@
-package com.sergii.shutyi.Model.entity;
+package com.sergii.shutyi.modell.entity;
 
 /**
  * Represents the contacts of the person in the note

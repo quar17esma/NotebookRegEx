@@ -1,4 +1,4 @@
-package com.sergii.shutyi.View;
+package com.sergii.shutyi.vieww;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,6 +1,6 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controllerr;
 
-import com.sergii.shutyi.Model.enums.Group;
+import com.sergii.shutyi.modell.enums.Group;
 
 public class InputData {
 

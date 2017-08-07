@@ -1,8 +1,8 @@
-package com.sergii.shutyi.Controller;
+package com.sergii.shutyi.controllerr;
 
-import com.sergii.shutyi.Exceptions.BusyNickNameException;
-import com.sergii.shutyi.Model.Model;
-import com.sergii.shutyi.View.View;
+import com.sergii.shutyi.exceptionss.BusyNickNameException;
+import com.sergii.shutyi.modell.Model;
+import com.sergii.shutyi.vieww.View;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +33,7 @@ public class AddNoteController extends HttpServlet {
             try {
                 isNoteCreated = model.createNote(inputData);
             } catch (BusyNickNameException e) {
-//                inputData.changeNickName(view);
+//                inputData.changeNickName(vieww);
             }
         }
     }

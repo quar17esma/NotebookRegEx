@@ -1,6 +1,6 @@
-package com.sergii.shutyi.Model.entity;
+package com.sergii.shutyi.modell.entity;
 
-import com.sergii.shutyi.Model.enums.Group;
+import com.sergii.shutyi.modell.enums.Group;
 
 /**
  * Represents {@code Note} from the {@code Notebook}

@@ -1,12 +1,12 @@
-package com.sergii.shutyi.Model;
+package com.sergii.shutyi.modell;
 
-import com.sergii.shutyi.Controller.InputData;
-import com.sergii.shutyi.Controller.InputDataUtilConsole;
-import com.sergii.shutyi.Model.entity.Address;
-import com.sergii.shutyi.Model.entity.Contacts;
-import com.sergii.shutyi.Model.entity.Note;
-import com.sergii.shutyi.Model.entity.Notebook;
-import com.sergii.shutyi.Model.enums.Group;
+import com.sergii.shutyi.controllerr.InputData;
+import com.sergii.shutyi.controllerr.InputDataUtilConsole;
+import com.sergii.shutyi.modell.entity.Address;
+import com.sergii.shutyi.modell.entity.Contacts;
+import com.sergii.shutyi.modell.entity.Note;
+import com.sergii.shutyi.modell.entity.Notebook;
+import com.sergii.shutyi.modell.enums.Group;
 import org.junit.Assert;
 import org.junit.Test;
 
