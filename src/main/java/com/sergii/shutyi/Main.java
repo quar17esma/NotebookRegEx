@@ -1,8 +1,8 @@
 package com.sergii.shutyi;
 
-import com.sergii.shutyi.Controller.Controller;
-import com.sergii.shutyi.Model.Model;
-import com.sergii.shutyi.View.View;
+import com.sergii.shutyi.controller.ControllerConsole;
+import com.sergii.shutyi.model.Model;
+import com.sergii.shutyi.view.View;
 
 /**
  * Created by S.Shutyi on 26.07.2017.
@@ -12,7 +12,7 @@ public class Main {
         // Initialization
         Model model = new Model();
         View view = new View();
-        Controller controller = new Controller(model, view);
+        ControllerConsole controller = new ControllerConsole(model, view);
         // Run
         controller.processUser();
     }
