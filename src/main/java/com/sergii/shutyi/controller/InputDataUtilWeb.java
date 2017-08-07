@@ -17,8 +17,8 @@ public class InputDataUtilWeb {
      *
      */
     public void inputAllData(HttpServletRequest request) {
-        inputData.setLastName(request.getParameter("firstName").trim());
-        inputData.setFirstName(request.getParameter("lastName").trim());
+        inputData.setLastName(request.getParameter("lastName").trim());
+        inputData.setFirstName(request.getParameter("firstName").trim());
         inputData.setMiddleName(request.getParameter("middleName").trim());
         inputData.setNickName(request.getParameter("nickName").trim());
         inputData.setCommentary(request.getParameter("commentary").trim());
