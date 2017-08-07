@@ -1,5 +1,5 @@
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%--<fmt:setLocale value="ru_RU" />--%>
 <fmt:setBundle basename="Labels"/>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@
                 <label for="firstName">
                     <fmt:message key="first.name"/>
                 </label>
-                <input id="firstName" type="text" name="firstName" placeholder="Name"
+                <input id="firstName" type="text" name="firstName" placeholder="Name" value="${inputData.firstName}"
                        required="required" autofocus="autofocus">
             </div>
 
@@ -50,7 +50,7 @@
                 <label for="lastName">
                     <fmt:message key="last.name"/>
                 </label>
-                <input id="lastName" type="text" name="lastName" placeholder="Surname"
+                <input id="lastName" type="text" name="lastName" placeholder="Surname" value="${inputData.lastName}"
                        required="required">
             </div>
 
