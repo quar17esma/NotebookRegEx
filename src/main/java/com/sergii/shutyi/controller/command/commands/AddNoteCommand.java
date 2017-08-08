@@ -13,7 +13,6 @@ public class AddNoteCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-//        request.setCharacterEncoding("UTF-8");
         String page = null;
 
         InputDataUtilWeb inputDataUtil = new InputDataUtilWeb();
