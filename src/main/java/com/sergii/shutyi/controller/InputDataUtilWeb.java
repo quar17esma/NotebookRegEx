@@ -13,7 +13,6 @@ public class InputDataUtilWeb {
      * Collects data from input.
      * <p>
      * Trims all Strings.
-     *
      */
     public void inputAllData(HttpServletRequest request) {
         inputData.setLastName(request.getParameter("lastName").trim());
@@ -36,6 +35,12 @@ public class InputDataUtilWeb {
         inputData.setApartmentNumber(request.getParameter("apartmentNumber").trim());
     }
 
+    /**
+     * Returns Group type for given name.
+     * @param group {@code String} name of group
+     * @throws IllegalArgumentException if there is no Group type for such group name.
+     * @return {@code Group} type for such group name.
+     */
     private Group inputGroup(String group) {
         Objects.requireNonNull(group);
         Group inputGroup = Group.valueOf(group.toUpperCase());
