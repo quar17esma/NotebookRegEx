@@ -4,6 +4,8 @@ import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.exceptions.BusyNickNameException;
 import com.sergii.shutyi.model.entity.Note;
 import com.sergii.shutyi.model.entity.Notebook;
+import com.sergii.shutyi.model.notebuilder.ConcreteNoteBuilder;
+import com.sergii.shutyi.model.notebuilder.NoteDirector;
 
 /**
  * The {@code model} class represents entities to store data and business logic.

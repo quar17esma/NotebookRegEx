@@ -1,4 +1,4 @@
-package com.sergii.shutyi.model;
+package com.sergii.shutyi.model.notebuilder;
 
 import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.model.entity.Address;
