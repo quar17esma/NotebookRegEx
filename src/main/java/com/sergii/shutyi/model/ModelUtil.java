@@ -4,8 +4,6 @@ import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.model.entity.Address;
 import com.sergii.shutyi.model.entity.Contacts;
 import com.sergii.shutyi.model.entity.Note;
-import com.sergii.shutyi.view.TextConstants;
-
 import java.util.Date;
 import java.util.Objects;
 
@@ -18,6 +16,9 @@ import java.util.Objects;
  * Created on 26.07.2017.
  */
 public class ModelUtil {
+    private static final String COMMA = ", ";
+    private static final String DOT = ".";
+    private static final String SPACE = " ";
 
     /**
      * Fills all {@code Note} fields with inputted and created data.
@@ -53,8 +54,8 @@ public class ModelUtil {
     private String makeLastNameInitials(Note note) {
         Objects.requireNonNull(note);
 
-        String lastNameInitials = note.getLastName() + TextConstants.SPACE
-                + note.getFirstName().substring(0, 1) + TextConstants.DOT;
+        String lastNameInitials = note.getLastName() + SPACE
+                + note.getFirstName().substring(0, 1) + DOT;
         return lastNameInitials;
     }
 
@@ -107,9 +108,9 @@ public class ModelUtil {
     private String makeFullAddress(Address address) {
         Objects.requireNonNull(address);
 
-        String fullAddress = address.getPostIndex() + TextConstants.COMMA
-                + address.getCity() + TextConstants.COMMA + address.getStreet() + TextConstants.COMMA
-                + address.getHouseNumber() + TextConstants.COMMA + address.getApartmentNumber();
+        String fullAddress = address.getPostIndex() + COMMA
+                + address.getCity() + COMMA + address.getStreet() + COMMA
+                + address.getHouseNumber() + COMMA + address.getApartmentNumber();
 
         return fullAddress;
     }

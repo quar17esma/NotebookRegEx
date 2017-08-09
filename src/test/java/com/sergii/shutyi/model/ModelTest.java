@@ -1,7 +1,7 @@
 package com.sergii.shutyi.model;
 
 import com.sergii.shutyi.controller.InputData;
-import com.sergii.shutyi.controller.InputDataUtilConsole;
+import com.sergii.shutyi.controller.InputDataUtilWeb;
 import com.sergii.shutyi.model.entity.Address;
 import com.sergii.shutyi.model.entity.Contacts;
 import com.sergii.shutyi.model.entity.Note;
@@ -42,7 +42,7 @@ public class ModelTest {
         noteExpectedOne.setAddress(addressExpectedOne);
 
 
-        InputDataUtilConsole inputDataUtil = new InputDataUtilConsole();
+        InputDataUtilWeb inputDataUtil = new InputDataUtilWeb();
         InputData inputData = new InputData();
         inputData.setLastName("John");
         inputData.setFirstName("Smith");

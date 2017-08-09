@@ -1,7 +1,6 @@
 package com.sergii.shutyi.controller;
 
 import com.sergii.shutyi.model.enums.Group;
-import com.sergii.shutyi.view.View;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
@@ -50,17 +49,6 @@ public class InputDataUtilWeb {
             default:
                 throw new IllegalArgumentException("Unsupported group " + group);
         }
-    }
-
-    /**
-     * Changes inputted {@code nickName} for another inputted from console.
-     * <p>
-     * Used if {@code Note} with inputted {@code nickName} already exists in {@code Notebook}.
-     *
-     * @param view to print messages.
-     */
-    public void changeNickName(View view) {
-//        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME_BUSY).trim());
     }
 
     //getters and setters
