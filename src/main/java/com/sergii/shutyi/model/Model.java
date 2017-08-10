@@ -4,6 +4,8 @@ import com.sergii.shutyi.controller.InputData;
 import com.sergii.shutyi.exceptions.BusyNickNameException;
 import com.sergii.shutyi.model.entity.Note;
 import com.sergii.shutyi.model.entity.Notebook;
+import com.sergii.shutyi.model.notebuilder.ConcreteNoteBuilder;
+import com.sergii.shutyi.model.notebuilder.NoteDirector;
 
 /**
  * The {@code model} class represents entities to store data and business logic.
@@ -28,9 +30,8 @@ public class Model {
      * @throws BusyNickNameException if {@code Note} with inputted login is already stored in {@code Notebook}.
      */
     public boolean createNote(InputData inputData) throws BusyNickNameException {
-        Note note = new Note();
-        ModelUtil modelUtil = new ModelUtil();
-        modelUtil.setAllData(note, inputData);
+        NoteDirector noteDirector = new NoteDirector(new ConcreteNoteBuilder());
+        Note note = noteDirector.createNote(inputData);
         notebook.addNote(note, inputData);
 
         return true;

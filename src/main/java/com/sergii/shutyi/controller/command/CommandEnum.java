@@ -4,6 +4,9 @@ import com.sergii.shutyi.controller.command.commands.AddNoteCommand;
 import com.sergii.shutyi.controller.command.commands.InputNoteCommand;
 import com.sergii.shutyi.controller.command.commands.ShowNotebookCommand;
 
+/**
+ * Possible Commands.
+ */
 public enum CommandEnum {
     ADD_NOTE{
         {

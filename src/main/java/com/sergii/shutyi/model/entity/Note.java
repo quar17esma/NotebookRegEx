@@ -2,6 +2,8 @@ package com.sergii.shutyi.model.entity;
 
 import com.sergii.shutyi.model.enums.Group;
 
+import java.util.Date;
+
 /**
  * Represents {@code Note} from the {@code Notebook}
  *
@@ -51,11 +53,11 @@ public class Note {
     /**
      * The date when note was created
      */
-    private String dateNoteAdded;
+    private Date dateNoteAdded;
     /**
      * The data when note was last modified|
      */
-    private String dateNoteLastModified;
+    private Date dateNoteLastModified;
 
     public String getLastName() {
         return lastName;
@@ -129,19 +131,19 @@ public class Note {
         this.address = address;
     }
 
-    public String getDateNoteAdded() {
+    public Date getDateNoteAdded() {
         return dateNoteAdded;
     }
 
-    public void setDateNoteAdded(String dateNoteAdded) {
+    public void setDateNoteAdded(Date dateNoteAdded) {
         this.dateNoteAdded = dateNoteAdded;
     }
 
-    public String getDateNoteLastModified() {
+    public Date getDateNoteLastModified() {
         return dateNoteLastModified;
     }
 
-    public void setDateNoteLastModified(String dateNoteLastModified) {
+    public void setDateNoteLastModified(Date dateNoteLastModified) {
         this.dateNoteLastModified = dateNoteLastModified;
     }
 

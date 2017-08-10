@@ -1,10 +1,14 @@
 package com.sergii.shutyi.controller;
 
 import com.sergii.shutyi.model.enums.Group;
-import com.sergii.shutyi.view.View;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
+/**
+ * Collects inputted data from request into InputData object.
+ *
+ * @author S.Shutyi
+ */
 public class InputDataUtilWeb {
 
     //Fields store inputted data
@@ -14,7 +18,6 @@ public class InputDataUtilWeb {
      * Collects data from input.
      * <p>
      * Trims all Strings.
-     *
      */
     public void inputAllData(HttpServletRequest request) {
         inputData.setLastName(request.getParameter("lastName").trim());
@@ -37,6 +40,12 @@ public class InputDataUtilWeb {
         inputData.setApartmentNumber(request.getParameter("apartmentNumber").trim());
     }
 
+    /**
+     * Returns Group type for given name.
+     * @param group {@code String} name of group
+     * @throws IllegalArgumentException if there is no Group type for such group name.
+     * @return {@code Group} type for such group name.
+     */
     private Group inputGroup(String group) {
         Objects.requireNonNull(group);
         Group inputGroup = Group.valueOf(group.toUpperCase());
@@ -50,17 +59,6 @@ public class InputDataUtilWeb {
             default:
                 throw new IllegalArgumentException("Unsupported group " + group);
         }
-    }
-
-    /**
-     * Changes inputted {@code nickName} for another inputted from console.
-     * <p>
-     * Used if {@code Note} with inputted {@code nickName} already exists in {@code Notebook}.
-     *
-     * @param view to print messages.
-     */
-    public void changeNickName(View view) {
-//        setNickName(inputData(view, CheckPatterns.NICKNAME, TextConstants.NICK_NAME_BUSY).trim());
     }
 
     //getters and setters

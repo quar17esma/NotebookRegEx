@@ -5,6 +5,9 @@ import com.sergii.shutyi.controller.manager.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Command for inputting data for new Note.
+ */
 public class InputNoteCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {

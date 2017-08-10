@@ -1,7 +1,7 @@
 package com.sergii.shutyi.model;
 
 import com.sergii.shutyi.controller.InputData;
-import com.sergii.shutyi.controller.InputDataUtilConsole;
+import com.sergii.shutyi.controller.InputDataUtilWeb;
 import com.sergii.shutyi.model.entity.Address;
 import com.sergii.shutyi.model.entity.Contacts;
 import com.sergii.shutyi.model.entity.Note;
@@ -42,7 +42,7 @@ public class ModelTest {
         noteExpectedOne.setAddress(addressExpectedOne);
 
 
-        InputDataUtilConsole inputDataUtil = new InputDataUtilConsole();
+
         InputData inputData = new InputData();
         inputData.setLastName("John");
         inputData.setFirstName("Smith");
@@ -60,12 +60,12 @@ public class ModelTest {
         inputData.setStreet("Tampere");
         inputData.setHouseNumber("88");
         inputData.setApartmentNumber("44");
-        inputDataUtil.setInputData(inputData);
+
 
         Model model = new Model();
-        model.createNote(inputDataUtil.getInputData());
+        model.createNote(inputData);
 
-        notebookExpected.addNote(noteExpectedOne, inputDataUtil.getInputData());
+        notebookExpected.addNote(noteExpectedOne, inputData);
 
         Notebook notebookActual = model.getNotebook();
         Assert.assertEquals(notebookExpected, notebookActual);
