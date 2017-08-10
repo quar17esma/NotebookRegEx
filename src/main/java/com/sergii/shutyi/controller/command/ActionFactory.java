@@ -5,6 +5,11 @@ import com.sergii.shutyi.controller.manager.MessageManager;
 import javax.servlet.http.HttpServletRequest;
 
 public class ActionFactory {
+    /**
+     * Method defines concrete command to execute from request parameter.
+     * @param request HttpServletRequest to get command parameter
+     * @return Command
+     */
     public ActionCommand defineCommand(HttpServletRequest request){
         ActionCommand currentCommand = new EmptyCommand();
 

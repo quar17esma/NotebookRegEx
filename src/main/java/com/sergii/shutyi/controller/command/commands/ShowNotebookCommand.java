@@ -7,6 +7,9 @@ import com.sergii.shutyi.model.entity.Notebook;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Command to show all Notes from Notebook.
+ */
 public class ShowNotebookCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {

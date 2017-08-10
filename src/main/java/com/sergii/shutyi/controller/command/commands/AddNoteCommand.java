@@ -10,6 +10,11 @@ import com.sergii.shutyi.controller.manager.MessageManager;
 import com.sergii.shutyi.exceptions.BusyNickNameException;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Command for creating and adding new Note to Notebook.
+ *
+ * @author S.Shutyi
+ */
 public class AddNoteCommand implements ActionCommand {
 
     @Override
@@ -37,10 +42,20 @@ public class AddNoteCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     * Creates new Note from inputted Data and adds it to Notebook.
+     * @param inputData
+     * @throws BusyNickNameException
+     */
     private void createNote(InputData inputData) throws BusyNickNameException {
         Controller.getModel().createNote(inputData);
     }
 
+    /**
+     * Check is inputData correct.
+     * @param inputData data to check
+     * @return true if all data correct.
+     */
     private boolean isInputDataCorrect(InputData inputData){
         InputDataChecker checker = new InputDataChecker();
 

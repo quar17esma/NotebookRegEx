@@ -4,6 +4,11 @@ import com.sergii.shutyi.model.enums.Group;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
+/**
+ * Collects inputted data from request into InputData object.
+ *
+ * @author S.Shutyi
+ */
 public class InputDataUtilWeb {
 
     //Fields store inputted data
