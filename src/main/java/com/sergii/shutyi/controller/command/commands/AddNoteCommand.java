@@ -1,6 +1,7 @@
 package com.sergii.shutyi.controller.command.commands;
 
 import com.sergii.shutyi.controller.Controller;
+import com.sergii.shutyi.controller.InputDataChecker;
 import com.sergii.shutyi.controller.command.ActionCommand;
 import com.sergii.shutyi.controller.manager.ConfigurationManager;
 import com.sergii.shutyi.controller.InputData;
@@ -17,6 +18,13 @@ public class AddNoteCommand implements ActionCommand {
 
         InputDataUtilWeb inputDataUtil = new InputDataUtilWeb();
         inputDataUtil.inputAllData(request);
+
+        if (!isInputDataCorrect(inputDataUtil.getInputData())) {
+            request.setAttribute("inputData", inputDataUtil.getInputData());
+            page = ConfigurationManager.getProperty("path.page.add.note");
+            return page;
+        }
+
         try {
             createNote(inputDataUtil.getInputData());
             page = ConfigurationManager.getProperty("path.page.add.note.success");
@@ -29,7 +37,13 @@ public class AddNoteCommand implements ActionCommand {
         return page;
     }
 
-    public void createNote(InputData inputData) throws BusyNickNameException {
+    private void createNote(InputData inputData) throws BusyNickNameException {
         Controller.getModel().createNote(inputData);
+    }
+
+    private boolean isInputDataCorrect(InputData inputData){
+        InputDataChecker checker = new InputDataChecker();
+
+        return checker.isInputDataCorrect(inputData);
     }
 }
